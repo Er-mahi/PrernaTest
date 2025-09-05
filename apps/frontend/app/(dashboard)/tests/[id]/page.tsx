@@ -7,12 +7,9 @@ import { Button } from "@/components/ui/Button";
 import { TestAttempt, TestResult } from "@/types/test";
 
 export default function TakeTest({ params }: { params: { id: string } }) {
-  const [attemptId, setAttemptId] = useState<string | null>(null);
-
   // --- Start attempt ---
   const start = useMutation<TestAttempt>({
     mutationFn: () => api.tests.startAttempt(params.id),
-    onSuccess: (attempt) => setAttemptId(attempt.id),
   });
 
   useEffect(() => {
@@ -21,18 +18,23 @@ export default function TakeTest({ params }: { params: { id: string } }) {
   }, []);
 
   // --- Get attempt data ---
-  const { data, isSuccess, isLoading } = useQuery<TestAttempt>({
+  const attemptId = start.data?.id;
+
+  const {
+    data,
+    isLoading: isAttemptLoading,
+  } = useQuery<TestAttempt>({
     enabled: !!attemptId,
     queryKey: ["attempt", attemptId],
     queryFn: () => api.tests.getAttempt(attemptId!),
   });
 
   // Flatten sections → questions
-   const flat = useMemo(() => {
+  const flat = useMemo(() => {
     if (!data) return [];
 
-    return data.test.sections.flatMap((s: TestAttempt["test"]["sections"][number]) =>
-      s.questions.map((q: TestAttempt["test"]["sections"][number]["questions"][number]) => ({
+    return data.test.sections.flatMap((s) =>
+      s.questions.map((q) => ({
         qid: q.question.id,
         content: q.question.content,
         options: q.question.options,
@@ -55,7 +57,8 @@ export default function TakeTest({ params }: { params: { id: string } }) {
   const [index, setIndex] = useState(0);
   const current = flat[index];
 
-  if (isLoading || !isSuccess) {
+  // --- Loading states ---
+  if (start.isPending || isAttemptLoading) {
     return (
       <div className="container mx-auto px-6 py-12">
         Preparing your attempt…
@@ -73,7 +76,7 @@ export default function TakeTest({ params }: { params: { id: string } }) {
 
   return (
     <div className="container mx-auto px-6 py-8">
-      <h1 className="mb-4 text-xl font-bold">{data.test.title}</h1>
+      <h1 className="mb-4 text-xl font-bold">{data?.test.title}</h1>
       <div className="rounded-xl border bg-card p-4">
         <div className="text-sm text-muted-foreground">
           Question {index + 1} / {flat.length}

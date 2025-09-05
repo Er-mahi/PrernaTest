@@ -19,64 +19,58 @@ class AttemptService {
   }
 
   async getQuestions(userId: string, attemptId: string) {
-    const attempt = await prisma.attempt.findFirst({
-      where: { id: attemptId, userId, status: "IN_PROGRESS" },
-      select: {
-        id: true,
-        test: {
-          select: {
-            id: true,
-            title: true,
-            sections: {
-              select: {
-                id: true,
-                title: true,
-                order: true,
-                questions: {
-                  select: {
-                    id: true,
-                    order: true,
-                    marks: true,
-                    question: {
-                      select: {
-                        id: true,
-                        content: true,
-                        difficulty: true,
-                        marks: true,
-                        imageUrl: true,
-                        options: {
-                          select: { id: true, content: true, order: true, imageUrl: true },
-                          orderBy: { order: "asc" }
-                        }
-                      }
-                    }
+  const attempt = await prisma.attempt.findFirst({
+    where: { id: attemptId, userId, status: "IN_PROGRESS" },
+    include: {
+      test: {
+        include: {
+          sections: {
+            include: {
+              questions: {
+                include: {
+                  question: {
+                    include: {
+                      options: true,
+                    },
                   },
-                  orderBy: { order: "asc" }
-                }
+                },
+                orderBy: { order: "asc" },
               },
-              orderBy: { order: "asc" }
-            }
-          }
-        }
-      }
-    });
-    if (!attempt) throw new Error("Attempt not found");
+            },
+            orderBy: { order: "asc" },
+          },
+        },
+      },
+      answers: {
+        select: {
+          questionId: true,
+          selectedOptionId: true,
+          isMarkedForReview: true,
+          timeSpent: true,
+        },
+      },
+    },
+  });
 
-    const userAnswers = await prisma.attemptAnswer.findMany({
-      where: { attemptId },
-      select: { questionId: true, selectedOptionId: true, isMarkedForReview: true, timeSpent: true }
-    });
+  if (!attempt) throw new Error("Attempt not found");
 
-    const answersMap = userAnswers.reduce((acc: Record<string, any>, a) => {
-      acc[a.questionId] = {
-        selectedOptionId: a.selectedOptionId ?? null,
-        isMarkedForReview: a.isMarkedForReview,
-        timeSpent: a.timeSpent ?? 0
-      };
-      return acc;
-    }, {});
-    return { attempt: { id: attempt.id, test: attempt.test }, userAnswers: answersMap };
-  }
+  // Map user answers
+  const answersMap = attempt.answers.reduce((acc, a) => {
+    acc[a.questionId] = {
+      selectedOptionId: a.selectedOptionId ?? null,
+      isMarkedForReview: a.isMarkedForReview,
+      timeSpent: a.timeSpent ?? 0,
+    };
+    return acc;
+  }, {} as Record<string, any>);
+
+  return {
+    id: attempt.id,
+    test: attempt.test,
+    userAnswers: answersMap,
+  };
+}
+
 
   async saveAnswer(
     userId: string,

@@ -8,6 +8,9 @@ import { RecentTests } from "@/components/dashboard/RecentTests";
 import { PerformanceChart } from "@/components/dashboard/PerformanceChart";
 import { WelcomeModal } from "@/components/dashboard/WelcomeModal";
 import { Button } from "@/components/ui/Button";
+
+import Link from "next/link";
+
 import { 
   Trophy, 
   Clock, 
@@ -117,10 +120,12 @@ export default function DashboardPage() {
             </div>
           </div>
           <div className="hidden md:block">
-            <Button className="bg-white/20 hover:bg-white/30 border-white/30">
+            <Link href={"/tests"}>
+            <Button  className="bg-white/20 hover:bg-white/30 border-white/30">
               Take a Test
               <ArrowRight className="h-4 w-4 ml-2" />
             </Button>
+            </Link>
           </div>
         </div>
       </div>

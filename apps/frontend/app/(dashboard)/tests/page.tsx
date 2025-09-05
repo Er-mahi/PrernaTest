@@ -9,7 +9,11 @@ import { TestLite } from "@/types/test";
 export default function TestsPage() {
   const { data, isLoading } = useQuery({
     queryKey: ["tests"],
-    queryFn: () => api.tests.getAll().then((res) => res.tests), // ✅ use api.tests.getAll
+    queryFn: async () => {
+      const res = await api.tests.getAll();
+      // Always return just the array of tests
+      return Array.isArray(res) ? res : res.tests;
+    },
   });
 
   if (isLoading) {
@@ -20,11 +24,14 @@ export default function TestsPage() {
     );
   }
 
+  // ✅ Ensure data is always an array
+  const tests: TestLite[] = data ?? [];
+
   return (
     <div className="container mx-auto px-6 py-12">
       <h1 className="mb-6 text-2xl font-bold">Available Tests</h1>
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-        {data?.map((t: TestLite) => ( // ✅ explicitly type `t`
+        {tests.map((t) => (
           <Card key={t.id} className="modern-card">
             <h3 className="text-lg font-semibold">{t.title}</h3>
             <p className="mt-2 line-clamp-3 text-sm text-muted-foreground">
@@ -39,7 +46,7 @@ export default function TestsPage() {
                 {t.isFree ? "Free" : `₹${t.price ?? 0}`}
               </span>
               <Link href={`/tests/${t.id}`}>
-                <Button>View</Button>
+                <Button>Start</Button>
               </Link>
             </div>
           </Card>
