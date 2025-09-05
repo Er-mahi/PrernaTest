@@ -1,0 +1,1 @@
+export type Profile = { id: string; email: string; name?: string | null; image?: string | null };

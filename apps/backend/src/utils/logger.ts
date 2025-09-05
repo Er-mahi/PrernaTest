@@ -1,0 +1,58 @@
+
+import winston from 'winston';
+import { config } from '@/config/env';
+
+// Custom log format
+const logFormat = winston.format.printf(({ level, message, timestamp, stack }) => {
+  return `${timestamp} [${level.toUpperCase()}]: ${stack || message}`;
+});
+
+// Create logger instance
+export const logger = winston.createLogger({
+  level: config.LOG_LEVEL,
+  format: winston.format.combine(
+    winston.format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'testmitra-backend' },
+  transports: [
+    // Write errors to error.log
+    new winston.transports.File({
+      filename: 'logs/error.log',
+      level: 'error',
+      format: winston.format.combine(
+        winston.format.timestamp(),
+        winston.format.json()
+      ),
+    }),
+    // Write all logs to combined.log
+    new winston.transports.File({
+      filename: 'logs/combined.log',
+      format: winston.format.combine(
+        winston.format.timestamp(),
+        winston.format.json()
+      ),
+    }),
+  ],
+});
+
+// Add console transport for non-production environments
+if (config.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.combine(
+      winston.format.colorize(),
+      winston.format.timestamp({ format: 'HH:mm:ss' }),
+      logFormat
+    ),
+  }));
+}
+
+// Create logs directory if it doesn't exist
+import fs from 'fs';
+import path from 'path';
+
+const logsDir = path.join(process.cwd(), 'logs');
+if (!fs.existsSync(logsDir)) {
+  fs.mkdirSync(logsDir, { recursive: true });
+}

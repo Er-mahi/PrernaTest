@@ -20,5 +20,18 @@
   "workspaces": [
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "bcrypt": "^6.0.0"
+  },
+  "overrides": {
+    "@types/react": "18.3.24",
+    "@types/react-dom": "18.3.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "resolutions": {
+    "@types/react": "18.3.24",
+    "@types/react-dom": "18.3.7"
+  }
 }

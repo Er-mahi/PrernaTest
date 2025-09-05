@@ -1,0 +1,1 @@
+export const Auth = { /* reserved for future server actions */ };
