@@ -9,13 +9,24 @@ export const start = async (req: Request, res: Response) => {
   return res.status(201).json({ success: true, data });
 };
 
-export const getAttemptQuestions = async (req: Request, res: Response) => {
+export const getAttempt = async (req: Request, res: Response) => {
   if (!req.params.id) {
-    return res.status(400).json({ success: false, message: "Attempt id is required" });
+    return res.status(400).json({ 
+      success: false, 
+      message: "Attempt id is required" });
   }
+
   const data = await attemptService.getQuestions(req.user!.id, req.params.id as string);
-  return res.json({ success: true, data });
+
+  // ✅ Don't use .attempt — it's already flattened
+  res.json({ success: true,
+    attempt: data,
+    userAnswers: data.userAnswers
+   });
 };
+
+
+
 
 export const saveAnswer = async (req: Request, res: Response) => {
   if (!req.params.id) {

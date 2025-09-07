@@ -44,24 +44,38 @@ export type Test = TestLite & {
 };
 
 // A test attempt (user starts a test)
-export type TestAttempt = {
+export interface TestAttempt {
   id: string;
-  test: Test;
+  test: {
+    id: string;
+    title: string;
+    sections: {
+      id: string;
+      title: string;
+      order: number;
+      questions: {
+        id: string;
+        order: number;
+        marks: number;
+        question: {
+          id: string;
+          content: string;
+          options: {
+            id: string;
+            content: string;
+            order: number;
+            imageUrl?: string | null;
+          }[];
+        };
+      }[];
+    }[];
+  };
   userAnswers: Record<
     string,
-    {
-      selectedOptionId: string | null;
-      isMarkedForReview: boolean;
-      timeSpent: number;
-    }
+    { selectedOptionId: string | null; isMarkedForReview: boolean; timeSpent: number }
   >;
-  startedAt: string;
-  completedAt?: string | null;
-   answers: {
-    [questionIndex: number]: number | null; 
-  };
-  markedForReview: number[];
-};
+}
+
 
 // Result after submitting a test
 export type TestResult = {

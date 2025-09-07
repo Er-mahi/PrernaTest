@@ -2,6 +2,7 @@ import { Router, Request, Response, NextFunction } from "express";
 import prisma from "@/config/database";
 import { authenticateToken, optionalAuth, authorize } from "@/middleware/auth";
 import { AppError } from "@/middleware/errorHandler";
+import { start as startAttempt } from "@/controllers/attemptController";
 
 const router = Router();
 
@@ -99,6 +100,9 @@ router.get("/:id", optionalAuth, async (req, res, next) => {
     next(error);
   }
 });
+
+// ✅ Start an attempt for a test
+router.post("/:testId/start", authenticateToken, startAttempt);
 
 // ✅ Get attempts of a test
 router.get("/:id/attempts", authenticateToken, async (req, res, next) => {

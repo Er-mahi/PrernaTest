@@ -36,6 +36,59 @@ router.post(
   })
 );
 
+
+
+/**
+ * Get attempt with test + sections + questions
+ */
+router.get(
+  "/:attemptId",
+  authenticateToken,
+  catchAsync(async (req, res) => {
+    const attemptId = req.params.attemptId!;
+    const userId = req.user!.id;
+
+    const attempt = await prisma.attempt.findUnique({
+      where: { id: attemptId },
+      include: {
+        test: {
+          include: {
+            sections: {
+              include: {
+                questions: {
+                  include: {
+                    question: { include: { options: true } },
+                  },
+                },
+              },
+            },
+          },
+        },
+        answers: true,
+      },
+    });
+
+    if (!attempt || attempt.userId !== userId) {
+      throw new AppError("Attempt not found", 404);
+    }
+
+    const userAnswers = attempt.answers.reduce((acc, ans) => {
+      acc[ans.questionId] = {
+        selectedOptionId: ans.selectedOptionId,
+        isMarkedForReview: ans.isMarkedForReview,
+      };
+      return acc;
+    }, {} as Record<string, any>);
+
+    res.json({
+      id: attempt.id,
+      test: attempt.test,
+      userAnswers,
+    });
+  })
+);
+
+
 /**
  * Save answer (autosave)
  */

@@ -172,7 +172,6 @@ router.post('/reset-password', validateResetPassword, catchAsync(async (req, res
  */
 router.get('/me', authenticateToken, catchAsync(async (req, res) => {
   const user = await authService.getProfile(req.user!.id);
-
   res.json({
     success: true,
     user,

@@ -29,10 +29,10 @@ export default function TestsPage() {
 
   return (
     <div className="container mx-auto px-6 py-12">
-      <h1 className="mb-6 text-2xl font-bold">Available Tests</h1>
+      <h1 className="mb-6 text-2xl text-slate-700 font-bold">Available Tests</h1>
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
         {tests.map((t) => (
-          <Card key={t.id} className="modern-card">
+          <Card key={t.id} className="modern-card bg-slate-700">
             <h3 className="text-lg font-semibold">{t.title}</h3>
             <p className="mt-2 line-clamp-3 text-sm text-muted-foreground">
               {t.description}

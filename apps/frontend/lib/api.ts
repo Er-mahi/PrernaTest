@@ -43,7 +43,7 @@ class ApiClient {
 
     try {
       const response = await fetch(url, config);
-
+      console.log(response);
       if (!response.ok) {
         const errorData = await response.json().catch(() => ({}));
         throw new ApiError(
@@ -143,15 +143,25 @@ class ApiClient {
       return this.request(`/tests/${id}`);
     },
 
-    startAttempt: async (testId: string): Promise<TestAttempt> => {
-      return this.request(`/tests/${testId}/start`, {
-        method: 'POST',
-      });
+    startAttempt: async (testId: string): Promise<{ attempt: TestAttempt; resumed: boolean }> => {
+      return this.request(`/attempts/${testId}/start`, { method: "POST" });
     },
 
-    getAttempt: async (attemptId: string): Promise<TestAttempt> => {
-      return this.request(`/attempts/${attemptId}`);
-    },
+
+  getAttempt: async (attemptId: string): Promise<TestAttempt> => {
+  const res = await this.request<any>(`/attempts/${attemptId}`);
+  console.log("getAttempt response", res); // 👀 Debug
+
+  // if backend sends { attempt: {...}, userAnswers: {...} }
+  if (res.attempt) {
+    return res.attempt;
+  }
+
+  // if backend sends directly attempt object
+  return res;
+},
+
+
 
     updateAnswer: async (
       attemptId: string, 
