@@ -3,9 +3,14 @@ export interface User {
   name: string;
   email: string;
   avatar?: string;
+  image?: string;
+  phone?: string;
+  location?: string;
+  emailVerified?: boolean;
+  role: string;
   subscription?: {
     plan: 'free' | 'premium' | 'pro';
-    expiresAt?: Date;
+    expiresAt?: string;
     features: string[];
   };
   stats?: {

@@ -149,17 +149,34 @@ class ApiClient {
 
 
   getAttempt: async (attemptId: string): Promise<TestAttempt> => {
-  const res = await this.request<any>(`/attempts/${attemptId}`);
-  console.log("getAttempt response", res); // 👀 Debug
+    const res = await this.request<any>(`/attempts/${attemptId}`);
+    console.log("getAttempt response", res); // 👀 Debug
 
-  // if backend sends { attempt: {...}, userAnswers: {...} }
-  if (res.attempt) {
-    return res.attempt;
-  }
+    // if backend sends { attempt: {...}, userAnswers: {...} }
+    if (res.attempt) {
+      console.log("res attempt", res); 
+      return res.attempt;
+    }
 
-  // if backend sends directly attempt object
-  return res;
-},
+
+    // if backend sends directly attempt object
+    return res;
+  },
+  
+   saveAnswer: async (
+    attemptId: string, 
+    payload: { questionId: string; optionId: string; isMarkedForReview?: boolean }
+  ): Promise<void> => {
+    return this.request(`/attempts/${attemptId}/answers`, {
+      method: 'POST',
+      body: JSON.stringify({
+        questionId: payload.questionId,
+        selectedOptionId: payload.optionId,
+        isMarkedForReview: payload.isMarkedForReview || false,
+        timeSpent: 5, // Default value
+      }),
+    });
+  },
 
 
 

@@ -46,9 +46,11 @@ export type Test = TestLite & {
 // A test attempt (user starts a test)
 export interface TestAttempt {
   id: string;
+  remainingTime: number;
   test: {
     id: string;
     title: string;
+    duration: number;
     sections: {
       id: string;
       title: string;

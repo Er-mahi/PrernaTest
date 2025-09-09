@@ -3819,3 +3819,188 @@
 {"level":"info","message":"Google login successful: shambhuram303@gmail.com","service":"testmitra-backend","timestamp":"2025-09-07 14:43:26","userId":"cmevjjyui0000v9q0tda11zth"}
 {"level":"info","message":"Google login successful: shambhuram303@gmail.com","service":"testmitra-backend","timestamp":"2025-09-07 14:43:26","userId":"cmevjjyui0000v9q0tda11zth"}
 {"level":"info","message":"Received SIGINT, shutting down gracefully...","service":"testmitra-backend","timestamp":"2025-09-07 16:10:29"}
+{"level":"info","message":"Starting a postgresql pool with 9 connections.","service":"testmitra-backend","target":"quaint::pooled","timestamp":"2025-09-08 00:10:35"}
+{"level":"info","message":"Redis client connected","service":"testmitra-backend","timestamp":"2025-09-08 00:10:35"}
+{"level":"info","message":"Redis client ready","service":"testmitra-backend","timestamp":"2025-09-08 00:10:35"}
+{"level":"info","message":"Redis connected successfully","service":"testmitra-backend","timestamp":"2025-09-08 00:10:35"}
+{"level":"info","message":"🚀 TestMitra Backend Server running on port 8000","service":"testmitra-backend","timestamp":"2025-09-08 00:10:35"}
+{"level":"info","message":"📚 Environment: development","service":"testmitra-backend","timestamp":"2025-09-08 00:10:35"}
+{"level":"info","message":"🔗 Health check: http://localhost:8000/health","service":"testmitra-backend","timestamp":"2025-09-08 00:10:35"}
+{"level":"info","message":"📋 Prisma Studio: npx prisma studio","service":"testmitra-backend","timestamp":"2025-09-08 00:10:35"}
+{"level":"info","message":"🌐 Frontend URL: http://localhost:3000","service":"testmitra-backend","timestamp":"2025-09-08 00:10:35"}
+{"level":"info","message":"Database connected successfully","service":"testmitra-backend","timestamp":"2025-09-08 00:10:36"}
+{"level":"info","message":"Google login successful: shambhuram303@gmail.com","service":"testmitra-backend","timestamp":"2025-09-08 00:10:52","userId":"cmevjjyui0000v9q0tda11zth"}
+{"level":"info","message":"Google login successful: shambhuram303@gmail.com","service":"testmitra-backend","timestamp":"2025-09-08 00:10:52","userId":"cmevjjyui0000v9q0tda11zth"}
+{"level":"info","message":"Redis client connected","service":"testmitra-backend","timestamp":"2025-09-08 10:51:04"}
+{"level":"info","message":"Starting a postgresql pool with 9 connections.","service":"testmitra-backend","target":"quaint::pooled","timestamp":"2025-09-08 10:51:04"}
+{"level":"info","message":"Redis client ready","service":"testmitra-backend","timestamp":"2025-09-08 10:51:05"}
+{"level":"info","message":"Redis connected successfully","service":"testmitra-backend","timestamp":"2025-09-08 10:51:05"}
+{"level":"info","message":"🚀 TestMitra Backend Server running on port 8000","service":"testmitra-backend","timestamp":"2025-09-08 10:51:05"}
+{"level":"info","message":"📚 Environment: development","service":"testmitra-backend","timestamp":"2025-09-08 10:51:05"}
+{"level":"info","message":"🔗 Health check: http://localhost:8000/health","service":"testmitra-backend","timestamp":"2025-09-08 10:51:05"}
+{"level":"info","message":"📋 Prisma Studio: npx prisma studio","service":"testmitra-backend","timestamp":"2025-09-08 10:51:05"}
+{"level":"info","message":"🌐 Frontend URL: http://localhost:3000","service":"testmitra-backend","timestamp":"2025-09-08 10:51:05"}
+{"level":"info","message":"Database connected successfully","service":"testmitra-backend","timestamp":"2025-09-08 10:51:05"}
+{"level":"info","message":"Google login successful: shambhuram303@gmail.com","service":"testmitra-backend","timestamp":"2025-09-08 10:58:54","userId":"cmevjjyui0000v9q0tda11zth"}
+{"level":"info","message":"Google login successful: shambhuram303@gmail.com","service":"testmitra-backend","timestamp":"2025-09-08 10:58:54","userId":"cmevjjyui0000v9q0tda11zth"}
+{"level":"info","message":"Google login successful: shambhuram303@gmail.com","service":"testmitra-backend","timestamp":"2025-09-08 12:59:44","userId":"cmevjjyui0000v9q0tda11zth"}
+{"level":"info","message":"Google login successful: shambhuram303@gmail.com","service":"testmitra-backend","timestamp":"2025-09-08 12:59:44","userId":"cmevjjyui0000v9q0tda11zth"}
+{"level":"info","message":"Google login successful: shambhuram303@gmail.com","service":"testmitra-backend","timestamp":"2025-09-08 14:25:01","userId":"cmevjjyui0000v9q0tda11zth"}
+{"level":"info","message":"Google login successful: shambhuram303@gmail.com","service":"testmitra-backend","timestamp":"2025-09-08 14:25:01","userId":"cmevjjyui0000v9q0tda11zth"}
+{"level":"info","message":"Received SIGINT, shutting down gracefully...","service":"testmitra-backend","timestamp":"2025-09-08 14:40:39"}
+{"level":"info","message":"Starting a postgresql pool with 9 connections.","service":"testmitra-backend","target":"quaint::pooled","timestamp":"2025-09-08 14:40:39"}
+{"level":"info","message":"Redis client connected","service":"testmitra-backend","timestamp":"2025-09-08 14:40:39"}
+{"level":"info","message":"Redis client ready","service":"testmitra-backend","timestamp":"2025-09-08 14:40:39"}
+{"level":"info","message":"Redis connected successfully","service":"testmitra-backend","timestamp":"2025-09-08 14:40:39"}
+{"level":"info","message":"🚀 TestMitra Backend Server running on port 8000","service":"testmitra-backend","timestamp":"2025-09-08 14:40:39"}
+{"level":"info","message":"📚 Environment: development","service":"testmitra-backend","timestamp":"2025-09-08 14:40:39"}
+{"level":"info","message":"🔗 Health check: http://localhost:8000/health","service":"testmitra-backend","timestamp":"2025-09-08 14:40:39"}
+{"level":"info","message":"📋 Prisma Studio: npx prisma studio","service":"testmitra-backend","timestamp":"2025-09-08 14:40:39"}
+{"level":"info","message":"🌐 Frontend URL: http://localhost:3000","service":"testmitra-backend","timestamp":"2025-09-08 14:40:39"}
+{"level":"info","message":"Database connected successfully","service":"testmitra-backend","timestamp":"2025-09-08 14:40:39"}
+{"level":"info","message":"Database disconnected","service":"testmitra-backend","timestamp":"2025-09-08 14:40:39"}
+{"level":"info","message":"Starting a postgresql pool with 9 connections.","service":"testmitra-backend","target":"quaint::pooled","timestamp":"2025-09-08 14:40:55"}
+{"level":"info","message":"Redis client connected","service":"testmitra-backend","timestamp":"2025-09-08 14:40:55"}
+{"level":"info","message":"Redis client ready","service":"testmitra-backend","timestamp":"2025-09-08 14:40:55"}
+{"level":"info","message":"Redis connected successfully","service":"testmitra-backend","timestamp":"2025-09-08 14:40:55"}
+{"level":"info","message":"🚀 TestMitra Backend Server running on port 8000","service":"testmitra-backend","timestamp":"2025-09-08 14:40:55"}
+{"level":"info","message":"📚 Environment: development","service":"testmitra-backend","timestamp":"2025-09-08 14:40:55"}
+{"level":"info","message":"🔗 Health check: http://localhost:8000/health","service":"testmitra-backend","timestamp":"2025-09-08 14:40:55"}
+{"level":"info","message":"📋 Prisma Studio: npx prisma studio","service":"testmitra-backend","timestamp":"2025-09-08 14:40:55"}
+{"level":"info","message":"🌐 Frontend URL: http://localhost:3000","service":"testmitra-backend","timestamp":"2025-09-08 14:40:55"}
+{"level":"info","message":"Database connected successfully","service":"testmitra-backend","timestamp":"2025-09-08 14:40:55"}
+{"level":"info","message":"Google login successful: shambhuram303@gmail.com","service":"testmitra-backend","timestamp":"2025-09-08 14:58:37","userId":"cmevjjyui0000v9q0tda11zth"}
+{"level":"info","message":"Google login successful: shambhuram303@gmail.com","service":"testmitra-backend","timestamp":"2025-09-08 14:58:37","userId":"cmevjjyui0000v9q0tda11zth"}
+{"level":"info","message":"Starting a postgresql pool with 9 connections.","service":"testmitra-backend","target":"quaint::pooled","timestamp":"2025-09-08 15:09:55"}
+{"level":"info","message":"Redis client connected","service":"testmitra-backend","timestamp":"2025-09-08 15:09:55"}
+{"level":"info","message":"Redis client ready","service":"testmitra-backend","timestamp":"2025-09-08 15:09:55"}
+{"level":"info","message":"Redis connected successfully","service":"testmitra-backend","timestamp":"2025-09-08 15:09:55"}
+{"level":"info","message":"🚀 TestMitra Backend Server running on port 8000","service":"testmitra-backend","timestamp":"2025-09-08 15:09:55"}
+{"level":"info","message":"📚 Environment: development","service":"testmitra-backend","timestamp":"2025-09-08 15:09:55"}
+{"level":"info","message":"🔗 Health check: http://localhost:8000/health","service":"testmitra-backend","timestamp":"2025-09-08 15:09:55"}
+{"level":"info","message":"📋 Prisma Studio: npx prisma studio","service":"testmitra-backend","timestamp":"2025-09-08 15:09:55"}
+{"level":"info","message":"🌐 Frontend URL: http://localhost:3000","service":"testmitra-backend","timestamp":"2025-09-08 15:09:55"}
+{"level":"info","message":"Database connected successfully","service":"testmitra-backend","timestamp":"2025-09-08 15:09:55"}
+{"level":"info","message":"Starting a postgresql pool with 9 connections.","service":"testmitra-backend","target":"quaint::pooled","timestamp":"2025-09-08 15:15:27"}
+{"level":"info","message":"Redis client connected","service":"testmitra-backend","timestamp":"2025-09-08 15:15:27"}
+{"level":"info","message":"Redis client ready","service":"testmitra-backend","timestamp":"2025-09-08 15:15:27"}
+{"level":"info","message":"Redis connected successfully","service":"testmitra-backend","timestamp":"2025-09-08 15:15:27"}
+{"level":"info","message":"🚀 TestMitra Backend Server running on port 8000","service":"testmitra-backend","timestamp":"2025-09-08 15:15:27"}
+{"level":"info","message":"📚 Environment: development","service":"testmitra-backend","timestamp":"2025-09-08 15:15:27"}
+{"level":"info","message":"🔗 Health check: http://localhost:8000/health","service":"testmitra-backend","timestamp":"2025-09-08 15:15:27"}
+{"level":"info","message":"📋 Prisma Studio: npx prisma studio","service":"testmitra-backend","timestamp":"2025-09-08 15:15:27"}
+{"level":"info","message":"🌐 Frontend URL: http://localhost:3000","service":"testmitra-backend","timestamp":"2025-09-08 15:15:27"}
+{"level":"info","message":"Database connected successfully","service":"testmitra-backend","timestamp":"2025-09-08 15:15:27"}
+{"level":"info","message":"Starting a postgresql pool with 9 connections.","service":"testmitra-backend","target":"quaint::pooled","timestamp":"2025-09-08 15:15:55"}
+{"level":"info","message":"Redis client connected","service":"testmitra-backend","timestamp":"2025-09-08 15:15:55"}
+{"level":"info","message":"Redis client ready","service":"testmitra-backend","timestamp":"2025-09-08 15:15:55"}
+{"level":"info","message":"Redis connected successfully","service":"testmitra-backend","timestamp":"2025-09-08 15:15:55"}
+{"level":"info","message":"🚀 TestMitra Backend Server running on port 8000","service":"testmitra-backend","timestamp":"2025-09-08 15:15:55"}
+{"level":"info","message":"📚 Environment: development","service":"testmitra-backend","timestamp":"2025-09-08 15:15:55"}
+{"level":"info","message":"🔗 Health check: http://localhost:8000/health","service":"testmitra-backend","timestamp":"2025-09-08 15:15:55"}
+{"level":"info","message":"📋 Prisma Studio: npx prisma studio","service":"testmitra-backend","timestamp":"2025-09-08 15:15:55"}
+{"level":"info","message":"🌐 Frontend URL: http://localhost:3000","service":"testmitra-backend","timestamp":"2025-09-08 15:15:55"}
+{"level":"info","message":"Database connected successfully","service":"testmitra-backend","timestamp":"2025-09-08 15:15:55"}
+{"level":"info","message":"Starting a postgresql pool with 9 connections.","service":"testmitra-backend","target":"quaint::pooled","timestamp":"2025-09-08 15:16:53"}
+{"level":"info","message":"Redis client connected","service":"testmitra-backend","timestamp":"2025-09-08 15:16:53"}
+{"level":"info","message":"Redis client ready","service":"testmitra-backend","timestamp":"2025-09-08 15:16:53"}
+{"level":"info","message":"Redis connected successfully","service":"testmitra-backend","timestamp":"2025-09-08 15:16:53"}
+{"level":"info","message":"🚀 TestMitra Backend Server running on port 8000","service":"testmitra-backend","timestamp":"2025-09-08 15:16:53"}
+{"level":"info","message":"📚 Environment: development","service":"testmitra-backend","timestamp":"2025-09-08 15:16:53"}
+{"level":"info","message":"🔗 Health check: http://localhost:8000/health","service":"testmitra-backend","timestamp":"2025-09-08 15:16:53"}
+{"level":"info","message":"📋 Prisma Studio: npx prisma studio","service":"testmitra-backend","timestamp":"2025-09-08 15:16:53"}
+{"level":"info","message":"🌐 Frontend URL: http://localhost:3000","service":"testmitra-backend","timestamp":"2025-09-08 15:16:53"}
+{"level":"info","message":"Database connected successfully","service":"testmitra-backend","timestamp":"2025-09-08 15:16:53"}
+{"level":"info","message":"Google login successful: shambhuram303@gmail.com","service":"testmitra-backend","timestamp":"2025-09-08 15:18:23","userId":"cmevjjyui0000v9q0tda11zth"}
+{"level":"info","message":"Google login successful: shambhuram303@gmail.com","service":"testmitra-backend","timestamp":"2025-09-08 15:18:23","userId":"cmevjjyui0000v9q0tda11zth"}
+{"level":"info","message":"Starting a postgresql pool with 9 connections.","service":"testmitra-backend","target":"quaint::pooled","timestamp":"2025-09-08 15:33:22"}
+{"level":"info","message":"Redis client connected","service":"testmitra-backend","timestamp":"2025-09-08 15:33:22"}
+{"level":"info","message":"Redis client ready","service":"testmitra-backend","timestamp":"2025-09-08 15:33:22"}
+{"level":"info","message":"Redis connected successfully","service":"testmitra-backend","timestamp":"2025-09-08 15:33:22"}
+{"level":"info","message":"🚀 TestMitra Backend Server running on port 8000","service":"testmitra-backend","timestamp":"2025-09-08 15:33:22"}
+{"level":"info","message":"📚 Environment: development","service":"testmitra-backend","timestamp":"2025-09-08 15:33:22"}
+{"level":"info","message":"🔗 Health check: http://localhost:8000/health","service":"testmitra-backend","timestamp":"2025-09-08 15:33:22"}
+{"level":"info","message":"📋 Prisma Studio: npx prisma studio","service":"testmitra-backend","timestamp":"2025-09-08 15:33:22"}
+{"level":"info","message":"🌐 Frontend URL: http://localhost:3000","service":"testmitra-backend","timestamp":"2025-09-08 15:33:22"}
+{"level":"info","message":"Database connected successfully","service":"testmitra-backend","timestamp":"2025-09-08 15:33:22"}
+{"level":"info","message":"Starting a postgresql pool with 9 connections.","service":"testmitra-backend","target":"quaint::pooled","timestamp":"2025-09-08 15:50:49"}
+{"level":"info","message":"Redis client connected","service":"testmitra-backend","timestamp":"2025-09-08 15:50:49"}
+{"level":"info","message":"Redis client ready","service":"testmitra-backend","timestamp":"2025-09-08 15:50:49"}
+{"level":"info","message":"Redis connected successfully","service":"testmitra-backend","timestamp":"2025-09-08 15:50:49"}
+{"level":"info","message":"🚀 TestMitra Backend Server running on port 8000","service":"testmitra-backend","timestamp":"2025-09-08 15:50:49"}
+{"level":"info","message":"📚 Environment: development","service":"testmitra-backend","timestamp":"2025-09-08 15:50:49"}
+{"level":"info","message":"🔗 Health check: http://localhost:8000/health","service":"testmitra-backend","timestamp":"2025-09-08 15:50:49"}
+{"level":"info","message":"📋 Prisma Studio: npx prisma studio","service":"testmitra-backend","timestamp":"2025-09-08 15:50:49"}
+{"level":"info","message":"🌐 Frontend URL: http://localhost:3000","service":"testmitra-backend","timestamp":"2025-09-08 15:50:49"}
+{"level":"info","message":"Database connected successfully","service":"testmitra-backend","timestamp":"2025-09-08 15:50:49"}
+{"level":"info","message":"Starting a postgresql pool with 9 connections.","service":"testmitra-backend","target":"quaint::pooled","timestamp":"2025-09-08 15:52:15"}
+{"level":"info","message":"Redis client connected","service":"testmitra-backend","timestamp":"2025-09-08 15:52:15"}
+{"level":"info","message":"Redis client ready","service":"testmitra-backend","timestamp":"2025-09-08 15:52:15"}
+{"level":"info","message":"Redis connected successfully","service":"testmitra-backend","timestamp":"2025-09-08 15:52:15"}
+{"level":"info","message":"🚀 TestMitra Backend Server running on port 8000","service":"testmitra-backend","timestamp":"2025-09-08 15:52:15"}
+{"level":"info","message":"📚 Environment: development","service":"testmitra-backend","timestamp":"2025-09-08 15:52:15"}
+{"level":"info","message":"🔗 Health check: http://localhost:8000/health","service":"testmitra-backend","timestamp":"2025-09-08 15:52:15"}
+{"level":"info","message":"📋 Prisma Studio: npx prisma studio","service":"testmitra-backend","timestamp":"2025-09-08 15:52:15"}
+{"level":"info","message":"🌐 Frontend URL: http://localhost:3000","service":"testmitra-backend","timestamp":"2025-09-08 15:52:15"}
+{"level":"info","message":"Database connected successfully","service":"testmitra-backend","timestamp":"2025-09-08 15:52:15"}
+{"level":"info","message":"Google login successful: shambhuram303@gmail.com","service":"testmitra-backend","timestamp":"2025-09-08 15:53:22","userId":"cmevjjyui0000v9q0tda11zth"}
+{"level":"info","message":"Google login successful: shambhuram303@gmail.com","service":"testmitra-backend","timestamp":"2025-09-08 15:53:22","userId":"cmevjjyui0000v9q0tda11zth"}
+{"level":"info","message":"User logged out: undefined","service":"testmitra-backend","timestamp":"2025-09-08 16:01:50","userId":"cmevjjyui0000v9q0tda11zth"}
+{"level":"info","message":"Google login successful: shambhuram303@gmail.com","service":"testmitra-backend","timestamp":"2025-09-08 16:02:04","userId":"cmevjjyui0000v9q0tda11zth"}
+{"level":"info","message":"Google login successful: shambhuram303@gmail.com","service":"testmitra-backend","timestamp":"2025-09-08 16:02:04","userId":"cmevjjyui0000v9q0tda11zth"}
+{"level":"info","message":"Starting a postgresql pool with 9 connections.","service":"testmitra-backend","target":"quaint::pooled","timestamp":"2025-09-08 16:16:16"}
+{"level":"info","message":"Redis client connected","service":"testmitra-backend","timestamp":"2025-09-08 16:16:16"}
+{"level":"info","message":"Redis client ready","service":"testmitra-backend","timestamp":"2025-09-08 16:16:16"}
+{"level":"info","message":"Redis connected successfully","service":"testmitra-backend","timestamp":"2025-09-08 16:16:16"}
+{"level":"info","message":"🚀 TestMitra Backend Server running on port 8000","service":"testmitra-backend","timestamp":"2025-09-08 16:16:16"}
+{"level":"info","message":"📚 Environment: development","service":"testmitra-backend","timestamp":"2025-09-08 16:16:16"}
+{"level":"info","message":"🔗 Health check: http://localhost:8000/health","service":"testmitra-backend","timestamp":"2025-09-08 16:16:16"}
+{"level":"info","message":"📋 Prisma Studio: npx prisma studio","service":"testmitra-backend","timestamp":"2025-09-08 16:16:16"}
+{"level":"info","message":"🌐 Frontend URL: http://localhost:3000","service":"testmitra-backend","timestamp":"2025-09-08 16:16:16"}
+{"level":"info","message":"Database connected successfully","service":"testmitra-backend","timestamp":"2025-09-08 16:16:16"}
+{"level":"info","message":"Google login successful: shambhuram303@gmail.com","service":"testmitra-backend","timestamp":"2025-09-08 16:20:17","userId":"cmevjjyui0000v9q0tda11zth"}
+{"level":"info","message":"Google login successful: shambhuram303@gmail.com","service":"testmitra-backend","timestamp":"2025-09-08 16:20:17","userId":"cmevjjyui0000v9q0tda11zth"}
+{"level":"info","message":"Received SIGINT, shutting down gracefully...","service":"testmitra-backend","timestamp":"2025-09-08 19:14:05"}
+{"level":"info","message":"Redis client connected","service":"testmitra-backend","timestamp":"2025-09-08 19:16:13"}
+{"level":"info","message":"Starting a postgresql pool with 9 connections.","service":"testmitra-backend","target":"quaint::pooled","timestamp":"2025-09-08 19:16:13"}
+{"level":"info","message":"Redis client ready","service":"testmitra-backend","timestamp":"2025-09-08 19:16:13"}
+{"level":"info","message":"Redis connected successfully","service":"testmitra-backend","timestamp":"2025-09-08 19:16:13"}
+{"level":"info","message":"🚀 TestMitra Backend Server running on port 8000","service":"testmitra-backend","timestamp":"2025-09-08 19:16:13"}
+{"level":"info","message":"📚 Environment: development","service":"testmitra-backend","timestamp":"2025-09-08 19:16:13"}
+{"level":"info","message":"🔗 Health check: http://localhost:8000/health","service":"testmitra-backend","timestamp":"2025-09-08 19:16:13"}
+{"level":"info","message":"📋 Prisma Studio: npx prisma studio","service":"testmitra-backend","timestamp":"2025-09-08 19:16:13"}
+{"level":"info","message":"🌐 Frontend URL: http://localhost:3000","service":"testmitra-backend","timestamp":"2025-09-08 19:16:13"}
+{"level":"info","message":"Database connected successfully","service":"testmitra-backend","timestamp":"2025-09-08 19:16:13"}
+{"level":"info","message":"Google login successful: shambhuram303@gmail.com","service":"testmitra-backend","timestamp":"2025-09-08 19:17:29","userId":"cmevjjyui0000v9q0tda11zth"}
+{"level":"info","message":"Google login successful: shambhuram303@gmail.com","service":"testmitra-backend","timestamp":"2025-09-08 19:17:29","userId":"cmevjjyui0000v9q0tda11zth"}
+{"level":"info","message":"Google login successful: shambhuram303@gmail.com","service":"testmitra-backend","timestamp":"2025-09-08 19:34:32","userId":"cmevjjyui0000v9q0tda11zth"}
+{"level":"info","message":"Google login successful: shambhuram303@gmail.com","service":"testmitra-backend","timestamp":"2025-09-08 19:34:32","userId":"cmevjjyui0000v9q0tda11zth"}
+{"level":"info","message":"Google login successful: shambhuram303@gmail.com","service":"testmitra-backend","timestamp":"2025-09-08 19:50:48","userId":"cmevjjyui0000v9q0tda11zth"}
+{"level":"info","message":"Google login successful: shambhuram303@gmail.com","service":"testmitra-backend","timestamp":"2025-09-08 19:50:48","userId":"cmevjjyui0000v9q0tda11zth"}
+{"level":"info","message":"Received SIGINT, shutting down gracefully...","service":"testmitra-backend","timestamp":"2025-09-08 20:00:44"}
+{"level":"info","message":"Starting a postgresql pool with 9 connections.","service":"testmitra-backend","target":"quaint::pooled","timestamp":"2025-09-08 20:06:48"}
+{"level":"info","message":"Redis client connected","service":"testmitra-backend","timestamp":"2025-09-08 20:06:48"}
+{"level":"info","message":"Redis client ready","service":"testmitra-backend","timestamp":"2025-09-08 20:06:48"}
+{"level":"info","message":"Redis connected successfully","service":"testmitra-backend","timestamp":"2025-09-08 20:06:48"}
+{"level":"info","message":"🚀 TestMitra Backend Server running on port 8000","service":"testmitra-backend","timestamp":"2025-09-08 20:06:48"}
+{"level":"info","message":"📚 Environment: development","service":"testmitra-backend","timestamp":"2025-09-08 20:06:48"}
+{"level":"info","message":"🔗 Health check: http://localhost:8000/health","service":"testmitra-backend","timestamp":"2025-09-08 20:06:48"}
+{"level":"info","message":"📋 Prisma Studio: npx prisma studio","service":"testmitra-backend","timestamp":"2025-09-08 20:06:48"}
+{"level":"info","message":"🌐 Frontend URL: http://localhost:3000","service":"testmitra-backend","timestamp":"2025-09-08 20:06:48"}
+{"level":"info","message":"Database connected successfully","service":"testmitra-backend","timestamp":"2025-09-08 20:06:48"}
+{"level":"info","message":"Google login successful: shambhuram303@gmail.com","service":"testmitra-backend","timestamp":"2025-09-08 20:07:30","userId":"cmevjjyui0000v9q0tda11zth"}
+{"level":"info","message":"Google login successful: shambhuram303@gmail.com","service":"testmitra-backend","timestamp":"2025-09-08 20:07:30","userId":"cmevjjyui0000v9q0tda11zth"}
+{"level":"info","message":"Google login successful: shambhuram303@gmail.com","service":"testmitra-backend","timestamp":"2025-09-08 20:27:06","userId":"cmevjjyui0000v9q0tda11zth"}
+{"level":"info","message":"Google login successful: shambhuram303@gmail.com","service":"testmitra-backend","timestamp":"2025-09-08 20:27:06","userId":"cmevjjyui0000v9q0tda11zth"}
+{"level":"info","message":"Redis client connected","service":"testmitra-backend","timestamp":"2025-09-09 15:04:58"}
+{"level":"info","message":"Starting a postgresql pool with 9 connections.","service":"testmitra-backend","target":"quaint::pooled","timestamp":"2025-09-09 15:04:58"}
+{"level":"info","message":"Redis client ready","service":"testmitra-backend","timestamp":"2025-09-09 15:04:58"}
+{"level":"info","message":"Redis connected successfully","service":"testmitra-backend","timestamp":"2025-09-09 15:04:58"}
+{"level":"info","message":"🚀 TestMitra Backend Server running on port 8000","service":"testmitra-backend","timestamp":"2025-09-09 15:04:58"}
+{"level":"info","message":"📚 Environment: development","service":"testmitra-backend","timestamp":"2025-09-09 15:04:58"}
+{"level":"info","message":"🔗 Health check: http://localhost:8000/health","service":"testmitra-backend","timestamp":"2025-09-09 15:04:58"}
+{"level":"info","message":"📋 Prisma Studio: npx prisma studio","service":"testmitra-backend","timestamp":"2025-09-09 15:04:58"}
+{"level":"info","message":"🌐 Frontend URL: http://localhost:3000","service":"testmitra-backend","timestamp":"2025-09-09 15:04:58"}
+{"level":"info","message":"Database connected successfully","service":"testmitra-backend","timestamp":"2025-09-09 15:04:58"}
+{"level":"info","message":"Google login successful: shambhuram303@gmail.com","service":"testmitra-backend","timestamp":"2025-09-09 15:09:35","userId":"cmevjjyui0000v9q0tda11zth"}
+{"level":"info","message":"Google login successful: shambhuram303@gmail.com","service":"testmitra-backend","timestamp":"2025-09-09 15:09:35","userId":"cmevjjyui0000v9q0tda11zth"}

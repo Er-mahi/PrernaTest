@@ -1,130 +1,195 @@
+// tests/[id]/page.tsx
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { api } from "@/lib/api";
-import { Button } from "@/components/ui/Button";
 import { TestAttempt, TestResult } from "@/types/test";
 import * as React from "react";
+import { TestHeader } from "@/components/test/TestHeader";
+import { QuestionCard } from "@/components/test/QuestionCard";
+import { QuestionPalette } from "@/components/test/QuestionPalette";
+import { TestSubmitModal } from "@/components/test/TestSubmitModal";
 
 export default function TakeTest({ params }: { params: Promise<{ id: string }> }) {
-  // --- Start attempt ---
-  
   const { id } = React.use(params);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [selectedAnswers, setSelectedAnswers] = useState<Record<number, number>>({});
+  const [markedForReview, setMarkedForReview] = useState<Record<number, boolean>>({});
+  const [showSubmitModal, setShowSubmitModal] = useState(false);
+  const [timeRemaining, setTimeRemaining] = useState(7200); // 2 hours in seconds
+
+  // Start attempt
   const start = useMutation<{ attempt: TestAttempt; resumed: boolean }>({
     mutationFn: () => api.tests.startAttempt(id),
   });
 
-// attemptId extract safely
-
-
-
   useEffect(() => {
-    start.mutate(); // fire once on mount
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    start.mutate();
   }, []);
 
-  // --- Get attempt data ---
+  // Get attempt data
   const attemptId = start.data?.attempt?.id;
-
- const { data, isLoading: isAttemptLoading } = useQuery<TestAttempt>({
-  enabled: !!attemptId,
-  queryKey: ["attempt", attemptId],
-  queryFn: () => api.tests.getAttempt(attemptId!),
-});
-
-  console.log("attempt data", data);
-
-  // Flatten sections → questions
-  const flat = useMemo(() => {
-
-   if (!data?.test?.sections) return [];
-  return data.test.sections.flatMap((s) =>
-    s.questions.map((q) => ({
-      qid: q.question.id,
-      content: q.question.content,
-      options: q.question.options,
-      marks: q.marks,
-    }))
-  );
-}, [data]);
-
-
-  // --- Save answer ---
-  const save = useMutation({
-    mutationFn: (payload: { questionIndex: number; answerIndex: number | null }) =>
-      api.tests.updateAnswer(attemptId!, payload.questionIndex, payload.answerIndex),
+  const { data, isLoading } = useQuery<TestAttempt>({
+    enabled: !!attemptId,
+    queryKey: ["attempt", attemptId],
+    queryFn: () => api.tests.getAttempt(attemptId!),
   });
 
-  // --- Submit test ---
-  const submit = useMutation<TestResult>({
+  // Flatten questions
+  const questions = useMemo(() => {
+    if (!data?.test?.sections) return [];
+    return data.test.sections.flatMap((s) =>
+      s.questions.map((q, idx) => ({
+        id: q.question.id,
+        content: q.question.content,
+        options: q.question.options,
+        marks: q.marks,
+        index: idx,
+      }))
+    );
+  }, [data]);
+
+  // Timer countdown
+  useEffect(() => {
+    if (data?.remainingTime) {
+      setTimeRemaining(data.remainingTime);
+    }
+    
+    const timer = setInterval(() => {
+      setTimeRemaining(prev => {
+        if (prev <= 1) {
+          handleSubmit(); // Auto submit when time runs out
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [data]);
+
+  // Save answer mutation
+  const saveAnswer = useMutation({
+    mutationFn: (payload: { questionId: string; optionId: string }) =>
+      api.tests.saveAnswer(attemptId!, payload),
+  });
+
+  // Submit test mutation
+  const submitTest = useMutation<TestResult>({
     mutationFn: () => api.tests.submitTest(attemptId!),
+    onSuccess: (result) => {
+      // Redirect to results page
+      window.location.href = `/results/${result.id}`;
+    },
   });
 
-  const [index, setIndex] = useState(0);
-  const current = flat[index];
+  const handleAnswerSelect = (questionIndex: number, optionIndex: number) => {
+    setSelectedAnswers(prev => ({ ...prev, [questionIndex]: optionIndex }));
+    
+    const question = questions[questionIndex];
+    const selectedOption = question.options[optionIndex];
+    
+    saveAnswer.mutate({
+      questionId: question.id,
+      optionId: selectedOption.id,
+    });
+  };
 
-  // --- Loading states ---
-  if (start.isPending || isAttemptLoading) {
+  const handleMarkForReview = (questionIndex: number) => {
+    setMarkedForReview(prev => ({
+      ...prev,
+      [questionIndex]: !prev[questionIndex]
+    }));
+  };
+
+  const handleSubmit = () => {
+    submitTest.mutate();
+  };
+
+  const getQuestionStatus = (questionIndex: number) => {
+    if (markedForReview[questionIndex]) return 'review';
+    if (selectedAnswers[questionIndex] !== undefined) return 'answered';
+    if (questionIndex < currentIndex) return 'visited';
+    return 'not-visited';
+  };
+
+  if (start.isPending || isLoading) {
     return (
-      <div className="container mx-auto px-6 py-12">
-        Preparing your attempt…
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+          <p className="text-lg font-medium">Preparing your test...</p>
+        </div>
       </div>
     );
   }
 
-  if (!current) {
+  if (!questions.length) {
     return (
-      <div className="container mx-auto px-6 py-12">
-        No questions found.
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center">
+          <h2 className="text-2xl font-bold text-gray-900 mb-2">No Questions Found</h2>
+          <p className="text-gray-600">This test appears to be empty.</p>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="container mx-auto px-6 py-8">
-      <h1 className="mb-4 text-xl font-bold">{data?.test.title}</h1>
-      <div className="rounded-xl border bg-card p-4 bg-slate-700">
-        <div className="text-sm text-muted-foreground">
-          Question {index + 1} / {flat.length}
-        </div>
-        <p className="mt-3 whitespace-pre-wrap">{current.content}</p>
+    <div className="min-h-screen bg-gray-50">
+      {/* Test Header */}
+      <TestHeader 
+        testTitle={data?.test?.title || "Test"}
+        timeRemaining={timeRemaining}
+        onSubmit={() => setShowSubmitModal(true)}
+      />
 
-        <div className="mt-4 space-y-2">
-          {current.options.map((o, optIndex) => (
-            <button
-              key={o.id}
-              className="block w-full rounded-lg border p-3 text-left hover:bg-muted"
-              onClick={() =>
-                save.mutate({ questionIndex: index, answerIndex: optIndex })
-              }
-            >
-              {o.content}
-            </button>
-          ))}
+      <div className="flex flex-col lg:flex-row h-[calc(100vh-80px)]">
+        {/* Question Section */}
+        <div className="flex-1 p-4 lg:p-6 overflow-y-auto">
+          <QuestionCard
+            question={questions[currentIndex]}
+            questionNumber={currentIndex + 1}
+            totalQuestions={questions.length}
+            selectedAnswer={selectedAnswers[currentIndex]}
+            onAnswerSelect={(optionIndex) => handleAnswerSelect(currentIndex, optionIndex)}
+            onPrevious={() => setCurrentIndex(prev => Math.max(0, prev - 1))}
+            onNext={() => setCurrentIndex(prev => Math.min(questions.length - 1, prev + 1))}
+            onMarkForReview={() => handleMarkForReview(currentIndex)}
+            isMarkedForReview={markedForReview[currentIndex]}
+            canGoPrevious={currentIndex > 0}
+            canGoNext={currentIndex < questions.length - 1}
+          />
         </div>
 
-        <div className="mt-6 flex items-center justify-between">
-          <Button onClick={() => setIndex((i) => Math.max(0, i - 1))}>
-            Back
-          </Button>
-          {index + 1 < flat.length ? (
-            <Button
-              onClick={() => setIndex((i) => Math.min(flat.length - 1, i + 1))}
-              className="border-0 bg-blue-600 text-white"
-            >
-              Next
-            </Button>
-          ) : (
-            <Button
-              onClick={() => submit.mutate()}
-              className="border-0 bg-green-600 text-white"
-            >
-              Submit
-            </Button>
-          )}
+        {/* Question Palette */}
+        <div className="lg:w-80 border-t lg:border-t-0 lg:border-l border-gray-200 bg-white">
+          <QuestionPalette
+            questions={questions}
+            currentQuestion={currentIndex}
+            onQuestionSelect={setCurrentIndex}
+            getQuestionStatus={getQuestionStatus}
+            answeredCount={Object.keys(selectedAnswers).length}
+            reviewCount={Object.keys(markedForReview).filter(key => markedForReview[parseInt(key)]).length}
+            visitedCount={currentIndex + 1}
+          />
         </div>
       </div>
+
+      {/* Submit Modal */}
+      <TestSubmitModal
+        isOpen={showSubmitModal}
+        onClose={() => setShowSubmitModal(false)}
+        onConfirm={handleSubmit}
+        isSubmitting={submitTest.isPending}
+        stats={{
+          total: questions.length,
+          answered: Object.keys(selectedAnswers).length,
+          notAnswered: questions.length - Object.keys(selectedAnswers).length,
+          markedForReview: Object.keys(markedForReview).filter(key => markedForReview[parseInt(key)]).length,
+        }}
+      />
     </div>
   );
 }

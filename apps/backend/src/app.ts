@@ -5,6 +5,7 @@ import { corsMiddleware } from "@/config/corsConfig";
 import authRoutes from "@/routes/auth";
 import testRoutes from "@/routes/tests";
 import attemptRoutes from "@/routes/attempts";
+import resultsRoutes from "./routes/results";
 import userRoutes from "@/routes/users";
 import paymentRoutes from "@/routes/payments";
 
@@ -52,6 +53,7 @@ app.get("/api", (_req, res) => {
 app.use("/api/auth", authRoutes);
 app.use("/api/tests", testRoutes);
 app.use("/api/attempts", attemptRoutes);
+app.use("/api/results", resultsRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/payments", paymentRoutes);
 

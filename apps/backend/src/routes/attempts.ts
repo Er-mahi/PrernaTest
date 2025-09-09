@@ -7,6 +7,78 @@ import { AttemptStatus } from "@prisma/client";
 
 const router = Router();
 
+
+
+/**
+ * Get attempt with test + sections + questions
+ */
+// backend/src/routes/attempts.ts - Update the GET /:attemptId route
+router.get(
+  "/:attemptId",
+  authenticateToken,
+  catchAsync(async (req, res) => {
+    const { attemptId } = req.params;
+    const userId = req.user!.id;
+
+    // Ensure attemptId is not undefined
+    if (!attemptId) {
+      throw new AppError("Attempt ID is required", 400);
+    }
+
+    const attempt = await prisma.attempt.findUnique({
+      where: { id: attemptId },
+      include: {
+        test: {
+          include: {
+            sections: {
+              include: {
+                questions: {
+                  include: {
+                    question: { include: { options: true } },
+                  },
+                },
+              },
+            },
+          },
+        },
+        answers: true,
+      },
+    });
+
+    if (!attempt || attempt.userId !== userId) {
+      throw new AppError("Attempt not found", 404);
+    }
+
+    // Calculate remaining time
+    const elapsed = Math.floor((Date.now() - attempt.startedAt.getTime()) / 1000);
+    const totalDuration = attempt.test.duration * 60;
+    const remainingTime = Math.max(0, totalDuration - elapsed);
+
+    // Type the reducer parameter explicitly
+    const userAnswers = attempt.answers.reduce(
+      (acc: Record<string, { selectedOptionId: string | null; isMarkedForReview: boolean }>, 
+       ans: typeof attempt.answers[number]) => {
+        acc[ans.questionId] = {
+          selectedOptionId: ans.selectedOptionId,
+          isMarkedForReview: ans.isMarkedForReview,
+        };
+        return acc;
+      },
+      {}
+    );
+
+    res.json({
+      id: attempt.id,
+      remainingTime, // ✅ Add this field
+      test: attempt.test,
+      userAnswers,
+      answers: attempt.answers, // ✅ Add this field
+    });
+  })
+);
+
+
+
 /**
  * Start a new attempt
  */
@@ -38,55 +110,6 @@ router.post(
 
 
 
-/**
- * Get attempt with test + sections + questions
- */
-router.get(
-  "/:attemptId",
-  authenticateToken,
-  catchAsync(async (req, res) => {
-    const attemptId = req.params.attemptId!;
-    const userId = req.user!.id;
-
-    const attempt = await prisma.attempt.findUnique({
-      where: { id: attemptId },
-      include: {
-        test: {
-          include: {
-            sections: {
-              include: {
-                questions: {
-                  include: {
-                    question: { include: { options: true } },
-                  },
-                },
-              },
-            },
-          },
-        },
-        answers: true,
-      },
-    });
-
-    if (!attempt || attempt.userId !== userId) {
-      throw new AppError("Attempt not found", 404);
-    }
-
-    const userAnswers = attempt.answers.reduce((acc, ans) => {
-      acc[ans.questionId] = {
-        selectedOptionId: ans.selectedOptionId,
-        isMarkedForReview: ans.isMarkedForReview,
-      };
-      return acc;
-    }, {} as Record<string, any>);
-
-    res.json({
-      id: attempt.id,
-      test: attempt.test,
-      userAnswers,
-    });
-  })
-);
 
 
 /**
@@ -138,10 +161,10 @@ router.post(
 router.post(
   "/:attemptId/submit",
   authenticateToken,
-  validateId,
+  //validateId,
   catchAsync(async (req, res) => {
     const attemptId = req.params.attemptId!;
-
+        console.log('Submit attempt:', attemptId);
     const attempt = await prisma.attempt.findUnique({
       where: { id: attemptId },
       include: {
@@ -150,7 +173,11 @@ router.post(
       },
     });
 
-    if (!attempt) throw new AppError("Attempt not found", 404);
+    if (!attempt){
+      console.log('Attempt not found:', attemptId);
+      throw new AppError("Attempt not found", 404);
+    }
+       
 
     let correct = 0;
     let wrong = 0;
@@ -195,7 +222,7 @@ router.post(
   },
 });
 
-    res.status(200).json({ attempt: updatedAttempt });
+    res.status(200).json(updatedAttempt);
   })
 );
 

@@ -284,6 +284,41 @@ router.get('/', authenticateToken, authorize('ADMIN', 'SUPER_ADMIN'), validatePa
   });
 }));
 
+
+// backend/src/routes/users.ts
+router.get(
+  "/stats",
+  authenticateToken,
+  catchAsync(async (req, res) => {
+    const userId = req.user!.id;
+
+    // Get user statistics from database
+    const attempts = await prisma.attempt.findMany({
+      where: { userId, status: "SUBMITTED" },
+      select: { score: true, percentage: true },
+    });
+
+    const testsCompleted = attempts.length;
+    const averageScore = testsCompleted > 0 
+      ? attempts.reduce((acc, attempt) => acc + (attempt.percentage || 0), 0) / testsCompleted 
+      : 0;
+    const totalScore = attempts.reduce((acc, attempt) => acc + (attempt.score || 0), 0);
+
+    // You can implement ranking logic based on your requirements
+    const rank = 1; // Placeholder
+    const streakDays = 0; // Placeholder
+
+    res.json({
+      testsCompleted,
+      averageScore: Math.round(averageScore * 100) / 100,
+      totalScore,
+      rank,
+      streakDays,
+    });
+  })
+);
+
+
 /**
  * @route PATCH /api/users/:id/status
  * @desc Activate/deactivate user (Admin)
