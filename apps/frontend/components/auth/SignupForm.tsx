@@ -199,7 +199,7 @@ export const SignupForm = () => {
             required
             value={formData.name}
             onChange={handleInputChange}
-            className={`pl-10 ${errors.name ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : ''}`}
+            className={`pl-10 ${errors.name ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : ''} text-gray-600`}
             placeholder="Enter your full name"
             disabled={isLoading}
           />
@@ -226,7 +226,7 @@ export const SignupForm = () => {
             required
             value={formData.email}
             onChange={handleInputChange}
-            className={`pl-10 ${errors.email ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : ''}`}
+            className={`pl-10 ${errors.email ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : ''} text-gray-600`}
             placeholder="Enter your email"
             disabled={isLoading}
           />
@@ -253,7 +253,7 @@ export const SignupForm = () => {
             required
             value={formData.password}
             onChange={handleInputChange}
-            className={`pl-10 pr-12 ${errors.password ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : ''}`}
+            className={`pl-10 pr-12 ${errors.password ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : ''} text-gray-600`}
             placeholder="Create a strong password"
             disabled={isLoading}
           />
@@ -337,9 +337,9 @@ export const SignupForm = () => {
               errors.confirmPassword || (formData.confirmPassword && formData.password !== formData.confirmPassword) 
                 ? 'border-red-300 focus:border-red-500 focus:ring-red-500' 
                 : formData.confirmPassword && formData.password === formData.confirmPassword
-                ? 'border-green-300 focus:border-green-500 focus:ring-green-500'
+                ? 'border-green-300 focus:border-green-500 focus:ring-green-500 text-gray-600'
                 : ''
-            }`}
+            } text-gray-600`}
             placeholder="Confirm your password"
             disabled={isLoading}
           />
@@ -379,7 +379,7 @@ export const SignupForm = () => {
             onChange={handleInputChange}
             className={`mt-1 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded transition-colors ${
               errors.acceptTerms ? 'border-red-300' : ''
-            }`}
+            } text-gray-600`}
             disabled={isLoading}
           />
           <label htmlFor="acceptTerms" className="ml-2 block text-sm text-gray-700">

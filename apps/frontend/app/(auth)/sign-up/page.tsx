@@ -7,8 +7,8 @@ import { GoogleLoginButton } from "@/components/auth/GoogleLoginButton";
 import { LoadingSpinner } from "@/components/ui/LoadingSpinner";
 
 export const metadata: Metadata = {
-  title: "Sign Up | TestMitra",
-  description: "Create your TestMitra account and start your government exam preparation journey.",
+  title: "Sign Up | PrernaTest",
+  description: "Create your PrernaTest account and start your government exam preparation journey.",
 };
 
 export default function SignUpPage() {
@@ -28,7 +28,7 @@ export default function SignUpPage() {
           <div className="bg-blue-600 p-2 rounded-lg">
             <BookOpen className="h-6 w-6 text-white" />
           </div>
-          <span className="text-xl font-bold text-gray-900">TestMitra</span>
+          <span className="text-xl font-bold text-gray-900">PrernaTest</span>
         </Link>
         
         <div className="w-20"></div> {/* Spacer for centering */}
@@ -65,9 +65,9 @@ export default function SignUpPage() {
           </div>
 
           {/* Signup Form */}
-          <Suspense fallback={<LoadingSpinner />}>
+          {/* <Suspense fallback={<LoadingSpinner />}>
             <SignupForm />
-          </Suspense>
+          </Suspense> */}
 
           {/* Sign In Link */}
           <div className="mt-6 text-center">
@@ -89,7 +89,7 @@ export default function SignUpPage() {
                 🎉 What you'll get with your free account:
               </p>
               <ul className="text-sm text-green-700 space-y-1">
-                <li>• Access to 100+ free mock tests</li>
+                <li>• Access to free mock tests</li>
                 <li>• Detailed performance analytics</li>
                 <li>• Study materials and preparation tips</li>
                 <li>• Community support and discussions</li>

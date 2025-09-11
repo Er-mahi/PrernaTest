@@ -42,7 +42,7 @@ export function WelcomeModal({ isOpen, onClose }: WelcomeModalProps) {
                 {/* Header */}
                 <div className="flex items-center justify-between mb-4">
                   <Dialog.Title className="text-lg font-medium leading-6 text-gray-900">
-                    Welcome to TestMitra! 🎉
+                    Welcome to PrernaTest! 🎉
                   </Dialog.Title>
                   <button
                     onClick={onClose}

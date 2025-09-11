@@ -13,23 +13,23 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "TestMitra - Government Exam Mock Tests",
+  title: "PrernaTest - Government Exam Mock Tests",
   description: "Practice for government exams with our comprehensive mock test platform. SSC, UPSC, Banking, Railway and more.",
   keywords: "government exams, mock tests, SSC, UPSC, banking exams, railway exams, online test platform",
-  authors: [{ name: "TestMitra Team" }],
+  authors: [{ name: "PrernaTest Team" }],
   viewport: "width=device-width, initial-scale=1",
   themeColor: "#3b82f6",
   openGraph: {
-    title: "TestMitra - Government Exam Mock Tests",
+    title: "PrernaTest - Government Exam Mock Tests",
     description: "Practice for government exams with our comprehensive mock test platform",
-    url: "https://testmitra.com",
-    siteName: "TestMitra",
+    url: "https://PrernaTest.com",
+    siteName: "PrernaTest",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "TestMitra - Government Exam Preparation",
+        alt: "PrernaTest - Government Exam Preparation",
       },
     ],
     locale: "en_US",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "TestMitra - Government Exam Mock Tests",
+    title: "PrernaTest - Government Exam Mock Tests",
     description: "Practice for government exams with comprehensive mock tests",
     images: ["/og-image.jpg"],
   },

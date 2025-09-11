@@ -73,7 +73,7 @@ const startServer = async () => {
     
     // Start HTTP server
     const server = app.listen(PORT, () => {
-      logger.info(`🚀 TestMitra Backend Server running on port ${PORT}`);
+      logger.info(`🚀 PrernaTest Backend Server running on port ${PORT}`);
       logger.info(`📚 Environment: ${config.NODE_ENV}`);
       logger.info(`🔗 Health check: http://localhost:${PORT}/health`);
       

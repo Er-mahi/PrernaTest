@@ -244,7 +244,7 @@ router.post('/verify', authenticateToken, catchAsync(async (req, res) => {
     try {
       await sendEmail({
   to: payment.user.email,
-  subject: "Payment Confirmation – TestMitra",
+  subject: "Payment Confirmation – PrernaTest",
   html: `
     <h2>Payment Successful ✅</h2>
     <p>Hi ${payment.user.name || "User"},</p>

@@ -15,7 +15,7 @@ export const logger = winston.createLogger({
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: 'testmitra-backend' },
+  defaultMeta: { service: 'PrernaTest-backend' },
   transports: [
     // Write errors to error.log
     new winston.transports.File({

@@ -11,7 +11,7 @@ export function Header() {
     <header className="flex h-16 items-center justify-between border-b bg-white px-6 shadow-sm">
       {/* Left side: Logo or dashboard title */}
       <Link href="/dashboard" className="text-xl font-bold text-blue-600">
-        TestMitra
+        PrernaTest
       </Link>
 
       {/* Right side: User info */}

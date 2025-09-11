@@ -12,9 +12,9 @@ export function FeaturesSection() {
       <h2 className="mb-6 text-center text-3xl font-bold">Everything you need to ace your exams</h2>
       <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
         {FEATURES.map((f) => (
-          <Card key={f.title} className="modern-card">
-            <h3 className="text-lg font-semibold">{f.title}</h3>
-            <p className="mt-2 text-sm text-muted-foreground">{f.desc}</p>
+          <Card key={f.title} className="modern-card bg-white ">
+            <h3 className="text-lg font-semibold text-gray-800">{f.title}</h3>
+            <p className="mt-2 text-sm  text-muted-foreground text-gray-600">{f.desc}</p>
           </Card>
         ))}
       </div>

@@ -32,7 +32,7 @@ app.get("/health", (_req, res) => {
 });
 app.get("/api", (_req, res) => {
   res.json({
-    message: "TestMitra API v1.0.0",
+    message: "PrernaTest API v1.0.0",
     version: "1.0.0",
     documentation: "/api/docs",
     endpoints: {

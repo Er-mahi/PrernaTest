@@ -19,7 +19,7 @@ interface EmailOptions {
 
 export async function sendEmail({ to, subject, text, html }: EmailOptions): Promise<void> {
   await transporter.sendMail({
-    from: `"TestMitra" <${process.env.SMTP_USER}>`,
+    from: `"PrernaTest" <${process.env.SMTP_USER}>`,
     to,
     subject,
     text,
@@ -33,11 +33,11 @@ export async function sendEmail({ to, subject, text, html }: EmailOptions): Prom
 export async function sendPaymentConfirmationEmail(to: string, amount: number) {
   return sendEmail({
     to,
-    subject: "Payment Confirmation – TestMitra",
+    subject: "Payment Confirmation – PrernaTest",
     html: `
       <h2>Payment Successful ✅</h2>
       <p>We received your payment of <b>₹${amount}</b>.</p>
-      <p>Thank you for supporting TestMitra!</p>
+      <p>Thank you for supporting PrernaTest!</p>
     `,
   });
 }
@@ -45,7 +45,7 @@ export async function sendPaymentConfirmationEmail(to: string, amount: number) {
 export async function sendOTPEmail(to: string, otp: string) {
   return sendEmail({
     to,
-    subject: "Your OTP – TestMitra",
+    subject: "Your OTP – PrernaTest",
     html: `<p>Your OTP is <b>${otp}</b>. It is valid for 5 minutes.</p>`,
   });
 }

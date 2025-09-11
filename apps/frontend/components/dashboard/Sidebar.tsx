@@ -87,7 +87,11 @@ const bottomNavigation = [
   }
 ];
 
-export const Sidebar = () => {
+interface SidebarProps {
+  onMobileClose?: () => void;
+}
+
+export const Sidebar = ({ onMobileClose }: SidebarProps) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const pathname = usePathname();
   const { user } = useAuth();
@@ -99,13 +103,16 @@ export const Sidebar = () => {
     return pathname.startsWith(href);
   };
 
+  const handleLinkClick = () => {
+    if (onMobileClose) {
+      onMobileClose();
+    }
+  };
+
   return (
     <>
-      {/* Mobile backdrop */}
-      <div className="lg:hidden fixed inset-0 z-40 bg-gray-900 bg-opacity-50" />
-      
       {/* Sidebar */}
-      <div className={`fixed inset-y-0 left-0 z-50 bg-white border-r border-gray-200 transition-all duration-300 ${
+      <div className={`h-full bg-white border-r border-gray-200 transition-all duration-300 ${
         isCollapsed ? 'w-16' : 'w-64'
       }`}>
         {/* Header */}
@@ -115,13 +122,13 @@ export const Sidebar = () => {
               <div className="bg-blue-600 p-2 rounded-lg">
                 <BookOpen className="h-6 w-6 text-white" />
               </div>
-              <span className="text-xl font-bold text-gray-900">TestMitra</span>
+              <span className="text-xl font-bold text-gray-900">PrernaTest</span>
             </Link>
           )}
           
           <button
             onClick={() => setIsCollapsed(!isCollapsed)}
-            className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
+            className="p-2 rounded-lg hover:bg-gray-100 transition-colors hidden lg:block"
           >
             <ChevronLeft className={`h-5 w-5 text-gray-500 transition-transform ${
               isCollapsed ? 'rotate-180' : ''
@@ -183,6 +190,7 @@ export const Sidebar = () => {
               <Link
                 key={item.name}
                 href={item.href}
+                onClick={handleLinkClick}
                 className={`group flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
                   active
                     ? 'bg-blue-100 text-blue-700 border-r-2 border-blue-600'
@@ -218,6 +226,7 @@ export const Sidebar = () => {
               <Link
                 key={item.name}
                 href={item.href}
+                onClick={handleLinkClick}
                 className={`group flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
                   active
                     ? 'bg-gray-100 text-gray-900'
@@ -247,6 +256,7 @@ export const Sidebar = () => {
               </p>
               <Link
                 href="/subscription"
+                onClick={handleLinkClick}
                 className="block w-full bg-white bg-opacity-20 text-center py-2 rounded-md text-sm font-medium hover:bg-opacity-30 transition-all"
               >
                 Upgrade Now

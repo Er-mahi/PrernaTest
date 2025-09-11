@@ -20,8 +20,8 @@ export const rateLimiter = rateLimit({
 
 // Strict rate limiter for auth endpoints
 export const authRateLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 5,
+  windowMs: 24 * 60 * 60 * 1000, 
+  max: 100,
   standardHeaders: true,
   legacyHeaders: false,
   handler: (req: Request, res: Response) => {
@@ -35,7 +35,7 @@ export const authRateLimiter = rateLimit({
 
 // Password reset rate limiter
 export const passwordResetRateLimiter = rateLimit({
-  windowMs: 60 * 60 * 1000, // 1 hour
+  windowMs: 24 * 60 * 60 * 1000, 
   max: 3,
   standardHeaders: true,
   legacyHeaders: false,
@@ -49,7 +49,7 @@ export const passwordResetRateLimiter = rateLimit({
 
 // File upload rate limiter
 export const uploadRateLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
+  windowMs: 24 * 60 * 60 * 1000, // 15 minutes
   max: 10,
   standardHeaders: true,
   legacyHeaders: false,

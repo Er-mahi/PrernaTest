@@ -116,10 +116,10 @@ export default function TakeTest({ params }: { params: Promise<{ id: string }> }
 
   if (start.isPending || isLoading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-          <p className="text-lg font-medium">Preparing your test...</p>
+          <div className="animate-spin rounded-full h-8 w-8 sm:h-12 sm:w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+          <p className="text-base sm:text-lg font-medium">Preparing your test...</p>
         </div>
       </div>
     );
@@ -127,10 +127,10 @@ export default function TakeTest({ params }: { params: Promise<{ id: string }> }
 
   if (!questions.length) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4">
         <div className="text-center">
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">No Questions Found</h2>
-          <p className="text-gray-600">This test appears to be empty.</p>
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">No Questions Found</h2>
+          <p className="text-sm sm:text-base text-gray-600">This test appears to be empty.</p>
         </div>
       </div>
     );
@@ -145,9 +145,9 @@ export default function TakeTest({ params }: { params: Promise<{ id: string }> }
         onSubmit={() => setShowSubmitModal(true)}
       />
 
-      <div className="flex flex-col lg:flex-row h-[calc(100vh-80px)]">
+      <div className="flex flex-col lg:flex-row min-h-[calc(100vh-80px)]">
         {/* Question Section */}
-        <div className="flex-1 p-4 lg:p-6 overflow-y-auto">
+        <div className="flex-1 p-3 sm:p-4 lg:p-6 overflow-y-auto">
           <QuestionCard
             question={questions[currentIndex]}
             questionNumber={currentIndex + 1}
@@ -164,7 +164,7 @@ export default function TakeTest({ params }: { params: Promise<{ id: string }> }
         </div>
 
         {/* Question Palette */}
-        <div className="lg:w-80 border-t lg:border-t-0 lg:border-l border-gray-200 bg-white">
+        <div className="w-full lg:w-80 border-t lg:border-t-0 lg:border-l border-gray-200 bg-white max-h-96 lg:max-h-none overflow-y-auto lg:overflow-visible">
           <QuestionPalette
             questions={questions}
             currentQuestion={currentIndex}

@@ -7,8 +7,8 @@ import { GoogleLoginButton } from "@/components/auth/GoogleLoginButton";
 import { LoadingSpinner } from "@/components/ui/LoadingSpinner";
 
 export const metadata: Metadata = {
-  title: "Sign In | TestMitra",
-  description: "Sign in to your TestMitra account to access mock tests and track your progress.",
+  title: "Sign In | PrernaTest",
+  description: "Sign in to your PrernaTest account to access mock tests and track your progress.",
 };
 
 export default function SignInPage() {
@@ -28,7 +28,7 @@ export default function SignInPage() {
           <div className="bg-blue-600 p-2 rounded-lg">
             <BookOpen className="h-6 w-6 text-white" />
           </div>
-          <span className="text-xl font-bold text-gray-900">TestMitra</span>
+          <span className="text-xl font-bold text-gray-900">PrernaTest</span>
         </Link>
         
         <div className="w-20"></div> {/* Spacer for centering */}
@@ -65,9 +65,9 @@ export default function SignInPage() {
           </div>
 
           {/* Login Form */}
-          <Suspense fallback={<LoadingSpinner />}>
+          {/* <Suspense fallback={<LoadingSpinner />}>
             <LoginForm />
-          </Suspense>
+          </Suspense> */}
 
           {/* Sign Up Link */}
           <div className="mt-6 text-center">
@@ -91,10 +91,10 @@ export default function SignInPage() {
               <p className="text-sm text-blue-600">
                 Contact our support team at{" "}
                 <a 
-                  href="mailto:support@testmitra.com" 
+                  href="mailto:support@prernatest.com" 
                   className="underline hover:text-blue-800 transition-colors"
                 >
-                  support@testmitra.com
+                  support@prernatest.com
                 </a>
               </p>
             </div>
