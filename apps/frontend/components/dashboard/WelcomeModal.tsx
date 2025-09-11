@@ -1,6 +1,6 @@
 "use client";
 
-import { Fragment } from "react";
+import { Fragment, useCallback, useEffect } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { X, Trophy, Target, Zap } from "lucide-react";
 import { Button } from "@/components/ui/Button";
@@ -11,10 +11,43 @@ interface WelcomeModalProps {
 }
 
 export function WelcomeModal({ isOpen, onClose }: WelcomeModalProps) {
+  // Optimized close handler
+  const handleClose = useCallback(() => {
+    onClose();
+  }, [onClose]);
+
+  // Handle escape key
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isOpen) {
+        handleClose();
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('keydown', handleEscape);
+      // Prevent body scroll when modal is open
+      document.body.style.overflow = 'hidden';
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen, handleClose]);
+
   return (
     <Transition appear show={isOpen} as={Fragment}>
-      <Dialog as={Fragment}  onClose={onClose}>
-        {/* Overlay */}
+      <Dialog 
+        as="div" 
+        className="relative z-50" 
+        onClose={handleClose}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="welcome-modal-title"
+        aria-describedby="welcome-modal-description"
+      >
+        {/* Backdrop Overlay */}
         <Transition.Child
           as={Fragment}
           enter="ease-out duration-300"
@@ -24,7 +57,10 @@ export function WelcomeModal({ isOpen, onClose }: WelcomeModalProps) {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="fixed inset-0 bg-black bg-opacity-25" />
+          <div 
+            className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm" 
+            aria-hidden="true"
+          />
         </Transition.Child>
 
         <div className="fixed inset-0 overflow-y-auto">
@@ -41,26 +77,34 @@ export function WelcomeModal({ isOpen, onClose }: WelcomeModalProps) {
               <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
                 {/* Header */}
                 <div className="flex items-center justify-between mb-4">
-                  <Dialog.Title className="text-lg font-medium leading-6 text-gray-900">
+                  <Dialog.Title 
+                    id="welcome-modal-title"
+                    className="text-lg font-medium leading-6 text-gray-900"
+                  >
                     Welcome to PrernaTest! 🎉
                   </Dialog.Title>
                   <button
-                    onClick={onClose}
-                    className="text-gray-400 hover:text-gray-600 transition-colors"
+                    onClick={handleClose}
+                    className="text-gray-400 hover:text-gray-600 transition-colors rounded-md p-1 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                    aria-label="Close welcome modal"
+                    type="button"
                   >
-                    <X className="h-5 w-5" />
+                    <X className="h-5 w-5" aria-hidden="true" />
                   </button>
                 </div>
 
                 {/* Body */}
                 <div className="space-y-4">
-                  <p className="text-sm text-gray-600">
+                  <p 
+                    id="welcome-modal-description"
+                    className="text-sm text-gray-600"
+                  >
                     You're all set to begin your exam preparation journey. Here's what you can do:
                   </p>
 
-                  <div className="space-y-3">
+                  <div className="space-y-3" role="list" aria-label="Platform features">
                     <FeatureCard
-                      icon={<Trophy className="h-5 w-5 text-blue-600" />}
+                      icon={<Trophy className="h-5 w-5 text-blue-600" aria-hidden="true" />}
                       title="Take Practice Tests"
                       description="Build your confidence with mock exams"
                       bg="bg-blue-50"
@@ -68,7 +112,7 @@ export function WelcomeModal({ isOpen, onClose }: WelcomeModalProps) {
                       descText="text-blue-700"
                     />
                     <FeatureCard
-                      icon={<Target className="h-5 w-5 text-green-600" />}
+                      icon={<Target className="h-5 w-5 text-green-600" aria-hidden="true" />}
                       title="Track Your Progress"
                       description="Monitor your scores and improvement"
                       bg="bg-green-50"
@@ -76,7 +120,7 @@ export function WelcomeModal({ isOpen, onClose }: WelcomeModalProps) {
                       descText="text-green-700"
                     />
                     <FeatureCard
-                      icon={<Zap className="h-5 w-5 text-purple-600" />}
+                      icon={<Zap className="h-5 w-5 text-purple-600" aria-hidden="true" />}
                       title="Build Your Streak"
                       description="Practice daily to maintain momentum"
                       bg="bg-purple-50"
@@ -87,11 +131,20 @@ export function WelcomeModal({ isOpen, onClose }: WelcomeModalProps) {
                 </div>
 
                 {/* Footer Buttons */}
-                <div className="mt-6 flex space-x-3">
-                  <Button onClick={onClose} className="flex-1">
+                <div className="mt-6 flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3">
+                  <Button 
+                    onClick={handleClose} 
+                    className="flex-1 w-full sm:w-auto"
+                    type="button"
+                  >
                     Get Started
                   </Button>
-                  <Button variant="outline" onClick={onClose} className="flex-1">
+                  <Button 
+                    variant="outline" 
+                    onClick={handleClose} 
+                    className="flex-1 w-full sm:w-auto"
+                    type="button"
+                  >
                     Take Tour
                   </Button>
                 </div>
@@ -116,11 +169,20 @@ interface FeatureCardProps {
 
 function FeatureCard({ icon, title, description, bg, text, descText }: FeatureCardProps) {
   return (
-    <div className={`flex items-center space-x-3 p-3 rounded-lg ${bg}`}>
-      {icon}
-      <div>
-        <p className={`font-medium ${text}`}>{title}</p>
-        <p className={`text-xs ${descText}`}>{description}</p>
+    <div 
+      className={`flex items-center space-x-3 p-3 rounded-lg ${bg} transition-colors duration-200`}
+      role="listitem"
+    >
+      <div className="flex-shrink-0">
+        {icon}
+      </div>
+      <div className="flex-1 min-w-0">
+        <p className={`font-medium ${text}`}>
+          {title}
+        </p>
+        <p className={`text-xs ${descText} mt-0.5`}>
+          {description}
+        </p>
       </div>
     </div>
   );

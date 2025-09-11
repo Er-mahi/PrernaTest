@@ -4185,3 +4185,101 @@
 {"level":"info","message":"📋 Prisma Studio: npx prisma studio","service":"PrernaTest-backend","timestamp":"2025-09-11 11:48:10"}
 {"level":"info","message":"🌐 Frontend URL: http://localhost:3000","service":"PrernaTest-backend","timestamp":"2025-09-11 11:48:10"}
 {"level":"info","message":"Database connected successfully","service":"PrernaTest-backend","timestamp":"2025-09-11 11:48:10"}
+{"level":"info","message":"Google login successful: mahaveerprashad870@gmail.com","service":"PrernaTest-backend","timestamp":"2025-09-11 12:41:39","userId":"cmfexrjd90000v9p4e3pu25in"}
+{"level":"info","message":"Google login successful: mahaveerprashad870@gmail.com","service":"PrernaTest-backend","timestamp":"2025-09-11 12:41:39","userId":"cmfexrjd90000v9p4e3pu25in"}
+{"level":"info","message":"Received SIGINT, shutting down gracefully...","service":"PrernaTest-backend","timestamp":"2025-09-11 13:05:55"}
+{"level":"info","message":"Redis client connected","service":"PrernaTest-backend","timestamp":"2025-09-11 13:15:55"}
+{"level":"info","message":"Starting a postgresql pool with 9 connections.","service":"PrernaTest-backend","target":"quaint::pooled","timestamp":"2025-09-11 13:15:55"}
+{"level":"info","message":"Redis client ready","service":"PrernaTest-backend","timestamp":"2025-09-11 13:15:55"}
+{"level":"info","message":"Redis connected successfully","service":"PrernaTest-backend","timestamp":"2025-09-11 13:15:55"}
+{"level":"info","message":"🚀 PrernaTest Backend Server running on port 8000","service":"PrernaTest-backend","timestamp":"2025-09-11 13:15:55"}
+{"level":"info","message":"📚 Environment: development","service":"PrernaTest-backend","timestamp":"2025-09-11 13:15:55"}
+{"level":"info","message":"🔗 Health check: http://localhost:8000/health","service":"PrernaTest-backend","timestamp":"2025-09-11 13:15:55"}
+{"level":"info","message":"📋 Prisma Studio: npx prisma studio","service":"PrernaTest-backend","timestamp":"2025-09-11 13:15:55"}
+{"level":"info","message":"🌐 Frontend URL: http://localhost:3000","service":"PrernaTest-backend","timestamp":"2025-09-11 13:15:55"}
+{"level":"info","message":"Database connected successfully","service":"PrernaTest-backend","timestamp":"2025-09-11 13:15:56"}
+{"level":"info","message":"Google login successful: mahaveerprashad870@gmail.com","service":"PrernaTest-backend","timestamp":"2025-09-11 13:16:23","userId":"cmfexrjd90000v9p4e3pu25in"}
+{"level":"info","message":"Google login successful: mahaveerprashad870@gmail.com","service":"PrernaTest-backend","timestamp":"2025-09-11 13:16:23","userId":"cmfexrjd90000v9p4e3pu25in"}
+{"level":"info","message":"Received SIGINT, shutting down gracefully...","service":"PrernaTest-backend","timestamp":"2025-09-11 13:24:45"}
+{"level":"info","message":"Starting a postgresql pool with 9 connections.","service":"PrernaTest-backend","target":"quaint::pooled","timestamp":"2025-09-11 13:35:12"}
+{"level":"info","message":"Redis client connected","service":"PrernaTest-backend","timestamp":"2025-09-11 13:35:12"}
+{"level":"info","message":"Redis client ready","service":"PrernaTest-backend","timestamp":"2025-09-11 13:35:13"}
+{"level":"info","message":"Redis connected successfully","service":"PrernaTest-backend","timestamp":"2025-09-11 13:35:13"}
+{"level":"info","message":"🚀 PrernaTest Backend Server running on port 8000","service":"PrernaTest-backend","timestamp":"2025-09-11 13:35:13"}
+{"level":"info","message":"📚 Environment: development","service":"PrernaTest-backend","timestamp":"2025-09-11 13:35:13"}
+{"level":"info","message":"🔗 Health check: http://localhost:8000/health","service":"PrernaTest-backend","timestamp":"2025-09-11 13:35:13"}
+{"level":"info","message":"📋 Prisma Studio: npx prisma studio","service":"PrernaTest-backend","timestamp":"2025-09-11 13:35:13"}
+{"level":"info","message":"🌐 Frontend URL: http://localhost:3000","service":"PrernaTest-backend","timestamp":"2025-09-11 13:35:13"}
+{"level":"info","message":"Database connected successfully","service":"PrernaTest-backend","timestamp":"2025-09-11 13:35:13"}
+{"level":"info","message":"Google login successful: mahaveerprashad870@gmail.com","service":"PrernaTest-backend","timestamp":"2025-09-11 13:35:16","userId":"cmff4ig1b0000v978it80dtpf"}
+{"level":"info","message":"Google login successful: mahaveerprashad870@gmail.com","service":"PrernaTest-backend","timestamp":"2025-09-11 13:35:16","userId":"cmff4ig1b0000v978it80dtpf"}
+{"level":"info","message":"Received SIGINT, shutting down gracefully...","service":"PrernaTest-backend","timestamp":"2025-09-11 13:52:45"}
+{"level":"info","message":"Redis client connected","service":"PrernaTest-backend","timestamp":"2025-09-11 13:53:19"}
+{"level":"info","message":"Starting a postgresql pool with 9 connections.","service":"PrernaTest-backend","target":"quaint::pooled","timestamp":"2025-09-11 13:53:19"}
+{"level":"info","message":"Redis client ready","service":"PrernaTest-backend","timestamp":"2025-09-11 13:53:19"}
+{"level":"info","message":"Redis connected successfully","service":"PrernaTest-backend","timestamp":"2025-09-11 13:53:19"}
+{"level":"info","message":"🚀 PrernaTest Backend Server running on port 8000","service":"PrernaTest-backend","timestamp":"2025-09-11 13:53:19"}
+{"level":"info","message":"📚 Environment: development","service":"PrernaTest-backend","timestamp":"2025-09-11 13:53:19"}
+{"level":"info","message":"🔗 Health check: http://localhost:8000/health","service":"PrernaTest-backend","timestamp":"2025-09-11 13:53:19"}
+{"level":"info","message":"📋 Prisma Studio: npx prisma studio","service":"PrernaTest-backend","timestamp":"2025-09-11 13:53:19"}
+{"level":"info","message":"🌐 Frontend URL: http://localhost:3000","service":"PrernaTest-backend","timestamp":"2025-09-11 13:53:19"}
+{"level":"info","message":"Database connected successfully","service":"PrernaTest-backend","timestamp":"2025-09-11 13:53:19"}
+{"level":"info","message":"Received SIGINT, shutting down gracefully...","service":"PrernaTest-backend","timestamp":"2025-09-11 14:20:46"}
+{"level":"info","message":"Starting a postgresql pool with 9 connections.","service":"PrernaTest-backend","target":"quaint::pooled","timestamp":"2025-09-11 14:42:58"}
+{"level":"info","message":"Redis client connected","service":"PrernaTest-backend","timestamp":"2025-09-11 14:42:58"}
+{"level":"info","message":"Redis client ready","service":"PrernaTest-backend","timestamp":"2025-09-11 14:42:59"}
+{"level":"info","message":"Redis connected successfully","service":"PrernaTest-backend","timestamp":"2025-09-11 14:42:59"}
+{"level":"info","message":"🚀 PrernaTest Backend Server running on port 8000","service":"PrernaTest-backend","timestamp":"2025-09-11 14:42:59"}
+{"level":"info","message":"📚 Environment: development","service":"PrernaTest-backend","timestamp":"2025-09-11 14:42:59"}
+{"level":"info","message":"🔗 Health check: http://localhost:8000/health","service":"PrernaTest-backend","timestamp":"2025-09-11 14:42:59"}
+{"level":"info","message":"📋 Prisma Studio: npx prisma studio","service":"PrernaTest-backend","timestamp":"2025-09-11 14:42:59"}
+{"level":"info","message":"🌐 Frontend URL: http://localhost:3000","service":"PrernaTest-backend","timestamp":"2025-09-11 14:42:59"}
+{"level":"info","message":"Database connected successfully","service":"PrernaTest-backend","timestamp":"2025-09-11 14:42:59"}
+{"level":"info","message":"Received SIGINT, shutting down gracefully...","service":"PrernaTest-backend","timestamp":"2025-09-11 14:47:48"}
+{"code":"ECONNREFUSED","level":"error","message":"Redis error:","service":"PrernaTest-backend","stack":"AggregateError\n    at internalConnectMultiple (node:net:1139:18)\n    at afterConnectMultiple (node:net:1714:7)","timestamp":"2025-09-11 16:36:01"}
+{"level":"info","message":"Redis client reconnecting...","service":"PrernaTest-backend","timestamp":"2025-09-11 16:36:01"}
+{"code":"ECONNREFUSED","level":"error","message":"Redis error:","service":"PrernaTest-backend","stack":"AggregateError\n    at internalConnectMultiple (node:net:1139:18)\n    at afterConnectMultiple (node:net:1714:7)","timestamp":"2025-09-11 16:36:01"}
+{"level":"info","message":"Starting a postgresql pool with 9 connections.","service":"PrernaTest-backend","target":"quaint::pooled","timestamp":"2025-09-11 16:36:01"}
+{"level":"info","message":"Redis client reconnecting...","service":"PrernaTest-backend","timestamp":"2025-09-11 16:36:01"}
+{"code":"ECONNREFUSED","level":"error","message":"Redis error:","service":"PrernaTest-backend","stack":"AggregateError\n    at internalConnectMultiple (node:net:1139:18)\n    at afterConnectMultiple (node:net:1714:7)","timestamp":"2025-09-11 16:36:01"}
+{"level":"info","message":"Redis client reconnecting...","service":"PrernaTest-backend","timestamp":"2025-09-11 16:36:01"}
+{"code":"ECONNREFUSED","level":"error","message":"Redis error:","service":"PrernaTest-backend","stack":"AggregateError\n    at internalConnectMultiple (node:net:1139:18)\n    at afterConnectMultiple (node:net:1714:7)","timestamp":"2025-09-11 16:36:01"}
+{"level":"info","message":"Redis client reconnecting...","service":"PrernaTest-backend","timestamp":"2025-09-11 16:36:02"}
+{"code":"ECONNREFUSED","level":"error","message":"Redis error:","service":"PrernaTest-backend","stack":"AggregateError\n    at internalConnectMultiple (node:net:1139:18)\n    at afterConnectMultiple (node:net:1714:7)","timestamp":"2025-09-11 16:36:02"}
+{"level":"info","message":"Redis client reconnecting...","service":"PrernaTest-backend","timestamp":"2025-09-11 16:36:02"}
+{"code":"ECONNREFUSED","level":"error","message":"Redis error:","service":"PrernaTest-backend","stack":"AggregateError\n    at internalConnectMultiple (node:net:1139:18)\n    at afterConnectMultiple (node:net:1714:7)","timestamp":"2025-09-11 16:36:02"}
+{"level":"info","message":"Redis client reconnecting...","service":"PrernaTest-backend","timestamp":"2025-09-11 16:36:02"}
+{"code":"ECONNREFUSED","level":"error","message":"Redis error:","service":"PrernaTest-backend","stack":"AggregateError\n    at internalConnectMultiple (node:net:1139:18)\n    at afterConnectMultiple (node:net:1714:7)","timestamp":"2025-09-11 16:36:02"}
+{"level":"info","message":"Redis client reconnecting...","service":"PrernaTest-backend","timestamp":"2025-09-11 16:36:02"}
+{"code":"ECONNREFUSED","level":"error","message":"Redis error:","service":"PrernaTest-backend","stack":"AggregateError\n    at internalConnectMultiple (node:net:1139:18)\n    at afterConnectMultiple (node:net:1714:7)","timestamp":"2025-09-11 16:36:02"}
+{"level":"info","message":"Redis client reconnecting...","service":"PrernaTest-backend","timestamp":"2025-09-11 16:36:03"}
+{"code":"ECONNREFUSED","level":"error","message":"Redis error:","service":"PrernaTest-backend","stack":"AggregateError\n    at internalConnectMultiple (node:net:1139:18)\n    at afterConnectMultiple (node:net:1714:7)","timestamp":"2025-09-11 16:36:03"}
+{"level":"info","message":"Redis client reconnecting...","service":"PrernaTest-backend","timestamp":"2025-09-11 16:36:03"}
+{"code":"ECONNREFUSED","level":"error","message":"Redis error:","service":"PrernaTest-backend","stack":"AggregateError\n    at internalConnectMultiple (node:net:1139:18)\n    at afterConnectMultiple (node:net:1714:7)","timestamp":"2025-09-11 16:36:03"}
+{"level":"info","message":"Redis client reconnecting...","service":"PrernaTest-backend","timestamp":"2025-09-11 16:36:04"}
+{"code":"ECONNREFUSED","level":"error","message":"Redis error:","service":"PrernaTest-backend","stack":"AggregateError\n    at internalConnectMultiple (node:net:1139:18)\n    at afterConnectMultiple (node:net:1714:7)","timestamp":"2025-09-11 16:36:04"}
+{"level":"info","message":"Redis client reconnecting...","service":"PrernaTest-backend","timestamp":"2025-09-11 16:36:04"}
+{"code":"ECONNREFUSED","level":"error","message":"Redis error:","service":"PrernaTest-backend","stack":"AggregateError\n    at internalConnectMultiple (node:net:1139:18)\n    at afterConnectMultiple (node:net:1714:7)","timestamp":"2025-09-11 16:36:04"}
+{"level":"info","message":"Received SIGINT, shutting down gracefully...","service":"PrernaTest-backend","timestamp":"2025-09-11 16:36:04"}
+{"level":"info","message":"Redis client reconnecting...","service":"PrernaTest-backend","timestamp":"2025-09-11 16:36:05"}
+{"code":"ECONNREFUSED","level":"error","message":"Redis error:","service":"PrernaTest-backend","stack":"AggregateError\n    at internalConnectMultiple (node:net:1139:18)\n    at afterConnectMultiple (node:net:1714:7)","timestamp":"2025-09-11 16:36:05"}
+{"level":"info","message":"Redis client reconnecting...","service":"PrernaTest-backend","timestamp":"2025-09-11 16:36:05"}
+{"code":"ECONNREFUSED","level":"error","message":"Redis error:","service":"PrernaTest-backend","stack":"AggregateError\n    at internalConnectMultiple (node:net:1139:18)\n    at afterConnectMultiple (node:net:1714:7)","timestamp":"2025-09-11 16:36:05"}
+{"clientVersion":"6.15.0","errorCode":"P1001","level":"error","message":"Database connection failed: Can't reach database server at `localhost:5432`\n\nPlease make sure your database server is running at `localhost:5432`.","name":"PrismaClientInitializationError","service":"PrernaTest-backend","stack":"PrismaClientInitializationError: Can't reach database server at `localhost:5432`\n\nPlease make sure your database server is running at `localhost:5432`.\n    at r (C:\\Users\\prash\\OneDrive\\Desktop\\Github\\lathi\\my-turborepo\\node_modules\\@prisma\\client\\src\\runtime\\core\\engines\\library\\LibraryEngine.ts:440:17)","timestamp":"2025-09-11 16:36:05"}
+{"level":"info","message":"Redis client connected","service":"PrernaTest-backend","timestamp":"2025-09-11 16:40:48"}
+{"level":"info","message":"Starting a postgresql pool with 9 connections.","service":"PrernaTest-backend","target":"quaint::pooled","timestamp":"2025-09-11 16:40:48"}
+{"level":"info","message":"Redis client ready","service":"PrernaTest-backend","timestamp":"2025-09-11 16:40:49"}
+{"level":"info","message":"Redis connected successfully","service":"PrernaTest-backend","timestamp":"2025-09-11 16:40:49"}
+{"level":"info","message":"🚀 PrernaTest Backend Server running on port 8000","service":"PrernaTest-backend","timestamp":"2025-09-11 16:40:49"}
+{"level":"info","message":"📚 Environment: development","service":"PrernaTest-backend","timestamp":"2025-09-11 16:40:49"}
+{"level":"info","message":"🔗 Health check: http://localhost:8000/health","service":"PrernaTest-backend","timestamp":"2025-09-11 16:40:49"}
+{"level":"info","message":"📋 Prisma Studio: npx prisma studio","service":"PrernaTest-backend","timestamp":"2025-09-11 16:40:49"}
+{"level":"info","message":"🌐 Frontend URL: http://localhost:3000","service":"PrernaTest-backend","timestamp":"2025-09-11 16:40:49"}
+{"level":"info","message":"Database connected successfully","service":"PrernaTest-backend","timestamp":"2025-09-11 16:40:49"}
+{"level":"info","message":"Google login successful: mahaveerprashad870@gmail.com","service":"PrernaTest-backend","timestamp":"2025-09-11 16:41:38","userId":"cmff4ig1b0000v978it80dtpf"}
+{"level":"info","message":"Google login successful: mahaveerprashad870@gmail.com","service":"PrernaTest-backend","timestamp":"2025-09-11 16:41:38","userId":"cmff4ig1b0000v978it80dtpf"}
+{"level":"info","message":"Google login successful: mahaveerprashad870@gmail.com","service":"PrernaTest-backend","timestamp":"2025-09-11 16:57:27","userId":"cmff4ig1b0000v978it80dtpf"}
+{"level":"info","message":"Google login successful: mahaveerprashad870@gmail.com","service":"PrernaTest-backend","timestamp":"2025-09-11 16:57:27","userId":"cmff4ig1b0000v978it80dtpf"}
+{"level":"info","message":"Google login successful: mahaveerprashad870@gmail.com","service":"PrernaTest-backend","timestamp":"2025-09-11 19:28:39","userId":"cmff4ig1b0000v978it80dtpf"}
+{"level":"info","message":"Google login successful: mahaveerprashad870@gmail.com","service":"PrernaTest-backend","timestamp":"2025-09-11 19:28:39","userId":"cmff4ig1b0000v978it80dtpf"}
+{"level":"info","message":"Received SIGINT, shutting down gracefully...","service":"PrernaTest-backend","timestamp":"2025-09-11 19:38:47"}

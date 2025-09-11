@@ -8,29 +8,14 @@ async function main() {
   // Create sample test with correct field names based on your schema
   const test = await prisma.test.create({
     data: {
-      title: 'राजस्थान चतुर्थ श्रेणी कर्मचारी संपूर्ण परीक्षा - 1',
+      title: 'Rajasthan 4th Grade Full Test - 1',
       description: `यह व्यापक परीक्षा राजस्थान चतुर्थ श्रेणी परीक्षा के सभी विषयों को शामिल करते हुए 4 खंडों में विभाजित है।
                     This comprehensive test contains 4 sections covering all subjects of the Rajasthan 4th Grade examination.`,
       duration: 120,
       totalMarks: 120,
       negativeMarking: true,
       negativeMarks: 0.33,
-      instructions: `1. समय अवधि: परीक्षा को 120 मिनट (2 घंटे) में पूर्ण करें
-                     2. ब्राउज़र चेतावनी: परीक्षा के दौरान ब्राउज़र को रीफ्रेश न करें क्योंकि इससे उत्तरों का नुकसान हो सकता है
-                     3. महत्वपूर्ण सूचना: इस मॉक टेस्ट में प्रत्येक प्रश्न के लिए 4 विकल्प (A, B, C, D) हैं। हालांकि, वास्तविक RSMSSB परीक्षा में "अनुत्तरित प्रश्न" के लिए 5वां विकल्प (E) होगा। अपनी वास्तविक परीक्षा के दौरान इस अंतर के बारे में सावधान रहें।
-                     4. अंकन योजना:
-
-                        -> प्रत्येक सही उत्तर के लिए +1 अंक
-
-                        -> प्रत्येक गलत उत्तर के लिए -1/3 अंक
-
-                        -> अनुत्तरित प्रश्नों के लिए 0 अंक
-
-                        -> नेविगेशन: आप प्रश्न संख्या पैनल का उपयोग करके प्रश्नों के बीच जा सकते हैं
-
-                        -> सबमिशन: केवल तभी "परीक्षा सबमिट करें" पर क्लिक करें जब आपने सभी प्रश्नों को पूरा कर लिया हो या उनकी समीक्षा कर ली हो
-
-                        -> तकनीकी आवश्यकताएं: पूरी परीक्षा के दौरान स्थिर इंटरनेट कनेक्शन सुनिश्चित करें`,
+      instructions: "",
       status: 'PUBLISHED',
       isFree: true,
       sections: {
@@ -2459,9 +2444,8 @@ async function main() {
   
   const test1 = await prisma.test.create({
     data: {
-      title: 'राजस्थान चतुर्थ श्रेणी कर्मचारी संपूर्ण परीक्षा - 2',
-      description: `यह व्यापक परीक्षा राजस्थान चतुर्थ श्रेणी परीक्षा के सभी विषयों को शामिल करते हुए 4 खंडों में विभाजित है।
-                    This comprehensive test contains 4 sections covering all subjects of the Rajasthan 4th Grade examination.`,
+      title: 'Rajasthan 4th Grade Full Test - 2',
+      description: `Soon...`,
       duration: 120,
       totalMarks: 120,
       negativeMarking: true,
@@ -2484,8 +2468,7 @@ async function main() {
   const test2 = await prisma.test.create({
     data: {
       title: 'Rajasthan 4th Grade Full Test - 3',
-      description:`यह व्यापक परीक्षा राजस्थान चतुर्थ श्रेणी परीक्षा के सभी विषयों को शामिल करते हुए 4 खंडों में विभाजित है।
-                    This comprehensive test contains 4 sections covering all subjects of the Rajasthan 4th Grade examination.`,
+      description:`Soon...`,
       duration: 120,
       totalMarks: 120,
       negativeMarking: true,

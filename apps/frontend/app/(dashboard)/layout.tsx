@@ -48,7 +48,7 @@ export default function DashboardLayout({
               >
                 <Menu className="h-6 w-6" />
               </button>
-              <h1 className="text-lg font-semibold text-blue-600">PrernaTest</h1>
+              <h1 className="text-lg font-semibold text-blue-600">TestMitra</h1>
             </div>
           </div>
         </div>
