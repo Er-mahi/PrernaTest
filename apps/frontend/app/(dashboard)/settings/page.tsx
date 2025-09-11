@@ -1,5 +1,3 @@
-import { ArrowLeft } from "lucide-react";
-import Link from "next/link";
 
 export default function SubscriptionPage() {
   return (
@@ -9,8 +7,6 @@ export default function SubscriptionPage() {
         <br />
         <span className="text-lg">यह सुविधा अभी विकासाधीन है</span>
       </h1>
- 
-            
     </div>
   );
 }
