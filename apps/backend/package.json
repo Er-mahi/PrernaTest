@@ -5,9 +5,11 @@
   "description": "PrernaTest Backend API",
   "main": "dist/index.js",
   "scripts": {
+    "postinstall": "prisma generate",
     "build": "tsc",
     "dev": "nodemon --watch src -e ts,json --exec ts-node -r tsconfig-paths/register src/server.ts",
-    "start": "node dist/server.js"
+    "start": "node dist/server.js",
+    "seed": "ts-node prisma/seed.ts"
   },
   "type": "commonjs",
   "dependencies": {
