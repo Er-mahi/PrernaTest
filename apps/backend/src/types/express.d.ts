@@ -5,7 +5,7 @@ declare global {
     interface UserShape {
       id: string;
       email: string;
-      role: "USER" | "ADMIN" | "SUPER_ADMIN" | string;
+      role: "USER" | "ADMIN" ;
       name?: string | null;
       image?: string | null;
     }
