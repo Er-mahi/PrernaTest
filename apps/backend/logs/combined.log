@@ -4283,3 +4283,75 @@
 {"level":"info","message":"Google login successful: mahaveerprashad870@gmail.com","service":"PrernaTest-backend","timestamp":"2025-09-11 19:28:39","userId":"cmff4ig1b0000v978it80dtpf"}
 {"level":"info","message":"Google login successful: mahaveerprashad870@gmail.com","service":"PrernaTest-backend","timestamp":"2025-09-11 19:28:39","userId":"cmff4ig1b0000v978it80dtpf"}
 {"level":"info","message":"Received SIGINT, shutting down gracefully...","service":"PrernaTest-backend","timestamp":"2025-09-11 19:38:47"}
+{"level":"info","message":"Starting a postgresql pool with 9 connections.","service":"PrernaTest-backend","target":"quaint::pooled","timestamp":"2025-09-11 22:56:48"}
+{"level":"info","message":"Redis client connected","service":"PrernaTest-backend","timestamp":"2025-09-11 22:56:49"}
+{"level":"info","message":"Redis client ready","service":"PrernaTest-backend","timestamp":"2025-09-11 22:56:49"}
+{"level":"info","message":"Redis connected successfully","service":"PrernaTest-backend","timestamp":"2025-09-11 22:56:49"}
+{"level":"info","message":"🚀 PrernaTest Backend Server running on port 8000","service":"PrernaTest-backend","timestamp":"2025-09-11 22:56:49"}
+{"level":"info","message":"📚 Environment: production","service":"PrernaTest-backend","timestamp":"2025-09-11 22:56:49"}
+{"level":"info","message":"🔗 Health check: http://localhost:8000/health","service":"PrernaTest-backend","timestamp":"2025-09-11 22:56:49"}
+{"level":"info","message":"Database connected successfully","service":"PrernaTest-backend","timestamp":"2025-09-11 22:56:49"}
+{"code":"ECONNRESET","errno":-4077,"level":"error","message":"Redis error: read ECONNRESET","service":"PrernaTest-backend","stack":"Error: read ECONNRESET\n    at TLSWrap.onStreamRead (node:internal/stream_base_commons:216:20)","syscall":"read","timestamp":"2025-09-12 01:26:08"}
+{"level":"info","message":"Redis client reconnecting...","service":"PrernaTest-backend","timestamp":"2025-09-12 01:26:08"}
+{"level":"error","message":"Error in PostgreSQL connection: Error { kind: Io, cause: Some(Os { code: 10054, kind: ConnectionReset, message: \"An existing connection was forcibly closed by the remote host.\" }) }","service":"PrernaTest-backend","target":"quaint::connector::postgres::native","timestamp":"2025-09-12 01:26:09"}
+{"code":"ENOTFOUND","errno":-3008,"hostname":"humane-husky-28095.upstash.io","level":"error","message":"Redis error: getaddrinfo ENOTFOUND humane-husky-28095.upstash.io","service":"PrernaTest-backend","stack":"Error: getaddrinfo ENOTFOUND humane-husky-28095.upstash.io\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)","syscall":"getaddrinfo","timestamp":"2025-09-12 01:26:09"}
+{"level":"info","message":"Redis client reconnecting...","service":"PrernaTest-backend","timestamp":"2025-09-12 01:26:09"}
+{"code":"ENOTFOUND","errno":-3008,"hostname":"humane-husky-28095.upstash.io","level":"error","message":"Redis error: getaddrinfo ENOTFOUND humane-husky-28095.upstash.io","service":"PrernaTest-backend","stack":"Error: getaddrinfo ENOTFOUND humane-husky-28095.upstash.io\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)","syscall":"getaddrinfo","timestamp":"2025-09-12 01:26:09"}
+{"level":"info","message":"Redis client reconnecting...","service":"PrernaTest-backend","timestamp":"2025-09-12 01:26:09"}
+{"code":"ENOTFOUND","errno":-3008,"hostname":"humane-husky-28095.upstash.io","level":"error","message":"Redis error: getaddrinfo ENOTFOUND humane-husky-28095.upstash.io","service":"PrernaTest-backend","stack":"Error: getaddrinfo ENOTFOUND humane-husky-28095.upstash.io\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)","syscall":"getaddrinfo","timestamp":"2025-09-12 01:26:11"}
+{"level":"info","message":"Redis client reconnecting...","service":"PrernaTest-backend","timestamp":"2025-09-12 01:26:11"}
+{"code":"ENOTFOUND","errno":-3008,"hostname":"humane-husky-28095.upstash.io","level":"error","message":"Redis error: getaddrinfo ENOTFOUND humane-husky-28095.upstash.io","service":"PrernaTest-backend","stack":"Error: getaddrinfo ENOTFOUND humane-husky-28095.upstash.io\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)","syscall":"getaddrinfo","timestamp":"2025-09-12 01:26:11"}
+{"level":"info","message":"Redis client reconnecting...","service":"PrernaTest-backend","timestamp":"2025-09-12 01:26:11"}
+{"code":"ENOTFOUND","errno":-3008,"hostname":"humane-husky-28095.upstash.io","level":"error","message":"Redis error: getaddrinfo ENOTFOUND humane-husky-28095.upstash.io","service":"PrernaTest-backend","stack":"Error: getaddrinfo ENOTFOUND humane-husky-28095.upstash.io\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)","syscall":"getaddrinfo","timestamp":"2025-09-12 01:26:11"}
+{"level":"info","message":"Redis client reconnecting...","service":"PrernaTest-backend","timestamp":"2025-09-12 01:26:12"}
+{"code":"ENOTFOUND","errno":-3008,"hostname":"humane-husky-28095.upstash.io","level":"error","message":"Redis error: getaddrinfo ENOTFOUND humane-husky-28095.upstash.io","service":"PrernaTest-backend","stack":"Error: getaddrinfo ENOTFOUND humane-husky-28095.upstash.io\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)","syscall":"getaddrinfo","timestamp":"2025-09-12 01:26:12"}
+{"level":"info","message":"Redis client reconnecting...","service":"PrernaTest-backend","timestamp":"2025-09-12 01:26:12"}
+{"code":"ENOTFOUND","errno":-3008,"hostname":"humane-husky-28095.upstash.io","level":"error","message":"Redis error: getaddrinfo ENOTFOUND humane-husky-28095.upstash.io","service":"PrernaTest-backend","stack":"Error: getaddrinfo ENOTFOUND humane-husky-28095.upstash.io\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)","syscall":"getaddrinfo","timestamp":"2025-09-12 01:26:12"}
+{"level":"info","message":"Redis client reconnecting...","service":"PrernaTest-backend","timestamp":"2025-09-12 01:26:12"}
+{"code":"ENOTFOUND","errno":-3008,"hostname":"humane-husky-28095.upstash.io","level":"error","message":"Redis error: getaddrinfo ENOTFOUND humane-husky-28095.upstash.io","service":"PrernaTest-backend","stack":"Error: getaddrinfo ENOTFOUND humane-husky-28095.upstash.io\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)","syscall":"getaddrinfo","timestamp":"2025-09-12 01:26:12"}
+{"level":"info","message":"Redis client reconnecting...","service":"PrernaTest-backend","timestamp":"2025-09-12 01:26:13"}
+{"code":"ENOTFOUND","errno":-3008,"hostname":"humane-husky-28095.upstash.io","level":"error","message":"Redis error: getaddrinfo ENOTFOUND humane-husky-28095.upstash.io","service":"PrernaTest-backend","stack":"Error: getaddrinfo ENOTFOUND humane-husky-28095.upstash.io\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)","syscall":"getaddrinfo","timestamp":"2025-09-12 01:26:13"}
+{"level":"info","message":"Redis client reconnecting...","service":"PrernaTest-backend","timestamp":"2025-09-12 01:26:13"}
+{"code":"ENOTFOUND","errno":-3008,"hostname":"humane-husky-28095.upstash.io","level":"error","message":"Redis error: getaddrinfo ENOTFOUND humane-husky-28095.upstash.io","service":"PrernaTest-backend","stack":"Error: getaddrinfo ENOTFOUND humane-husky-28095.upstash.io\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)","syscall":"getaddrinfo","timestamp":"2025-09-12 01:26:13"}
+{"level":"info","message":"Redis client reconnecting...","service":"PrernaTest-backend","timestamp":"2025-09-12 01:26:13"}
+{"code":"ENOTFOUND","errno":-3008,"hostname":"humane-husky-28095.upstash.io","level":"error","message":"Redis error: getaddrinfo ENOTFOUND humane-husky-28095.upstash.io","service":"PrernaTest-backend","stack":"Error: getaddrinfo ENOTFOUND humane-husky-28095.upstash.io\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)","syscall":"getaddrinfo","timestamp":"2025-09-12 01:26:13"}
+{"level":"info","message":"Redis client reconnecting...","service":"PrernaTest-backend","timestamp":"2025-09-12 01:26:14"}
+{"code":"ENOTFOUND","errno":-3008,"hostname":"humane-husky-28095.upstash.io","level":"error","message":"Redis error: getaddrinfo ENOTFOUND humane-husky-28095.upstash.io","service":"PrernaTest-backend","stack":"Error: getaddrinfo ENOTFOUND humane-husky-28095.upstash.io\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)","syscall":"getaddrinfo","timestamp":"2025-09-12 01:26:14"}
+{"level":"info","message":"Redis client reconnecting...","service":"PrernaTest-backend","timestamp":"2025-09-12 01:26:15"}
+{"code":"ENOTFOUND","errno":-3008,"hostname":"humane-husky-28095.upstash.io","level":"error","message":"Redis error: getaddrinfo ENOTFOUND humane-husky-28095.upstash.io","service":"PrernaTest-backend","stack":"Error: getaddrinfo ENOTFOUND humane-husky-28095.upstash.io\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)","syscall":"getaddrinfo","timestamp":"2025-09-12 01:26:15"}
+{"level":"info","message":"Redis client reconnecting...","service":"PrernaTest-backend","timestamp":"2025-09-12 01:26:15"}
+{"code":"ENOTFOUND","errno":-3008,"hostname":"humane-husky-28095.upstash.io","level":"error","message":"Redis error: getaddrinfo ENOTFOUND humane-husky-28095.upstash.io","service":"PrernaTest-backend","stack":"Error: getaddrinfo ENOTFOUND humane-husky-28095.upstash.io\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)","syscall":"getaddrinfo","timestamp":"2025-09-12 01:26:15"}
+{"level":"info","message":"Redis client reconnecting...","service":"PrernaTest-backend","timestamp":"2025-09-12 01:26:16"}
+{"level":"info","message":"Starting a postgresql pool with 9 connections.","service":"PrernaTest-backend","target":"quaint::pooled","timestamp":"2025-09-12 09:44:00"}
+{"level":"info","message":"Redis client connected","service":"PrernaTest-backend","timestamp":"2025-09-12 09:44:00"}
+{"level":"info","message":"Redis client ready","service":"PrernaTest-backend","timestamp":"2025-09-12 09:44:00"}
+{"level":"info","message":"Redis connected successfully","service":"PrernaTest-backend","timestamp":"2025-09-12 09:44:00"}
+{"level":"info","message":"🚀 PrernaTest Backend Server running on port 8000","service":"PrernaTest-backend","timestamp":"2025-09-12 09:44:00"}
+{"level":"info","message":"📚 Environment: production","service":"PrernaTest-backend","timestamp":"2025-09-12 09:44:00"}
+{"level":"info","message":"🔗 Health check: http://localhost:8000/health","service":"PrernaTest-backend","timestamp":"2025-09-12 09:44:00"}
+{"level":"info","message":"Database connected successfully","service":"PrernaTest-backend","timestamp":"2025-09-12 09:44:01"}
+{"level":"info","message":"Google login successful: mahaveerprashad870@gmail.com","service":"PrernaTest-backend","timestamp":"2025-09-12 09:44:30","userId":"cmfgbpj0c0000v94kw4z8rl6t"}
+{"level":"info","message":"Google login successful: mahaveerprashad870@gmail.com","service":"PrernaTest-backend","timestamp":"2025-09-12 09:44:31","userId":"cmfgbpj0c0000v94kw4z8rl6t"}
+{"level":"info","message":"Received SIGINT, shutting down gracefully...","service":"PrernaTest-backend","timestamp":"2025-09-12 09:45:01"}
+{"level":"info","message":"Starting a postgresql pool with 9 connections.","service":"PrernaTest-backend","target":"quaint::pooled","timestamp":"2025-09-12 10:00:19"}
+{"level":"info","message":"Redis client connected","service":"PrernaTest-backend","timestamp":"2025-09-12 10:00:19"}
+{"level":"info","message":"Redis client ready","service":"PrernaTest-backend","timestamp":"2025-09-12 10:00:19"}
+{"level":"info","message":"Redis connected successfully","service":"PrernaTest-backend","timestamp":"2025-09-12 10:00:19"}
+{"level":"info","message":"🚀 PrernaTest Backend Server running on port 8000","service":"PrernaTest-backend","timestamp":"2025-09-12 10:00:19"}
+{"level":"info","message":"📚 Environment: production","service":"PrernaTest-backend","timestamp":"2025-09-12 10:00:19"}
+{"level":"info","message":"🔗 Health check: http://localhost:8000/health","service":"PrernaTest-backend","timestamp":"2025-09-12 10:00:19"}
+{"level":"info","message":"Database connected successfully","service":"PrernaTest-backend","timestamp":"2025-09-12 10:00:20"}
+{"level":"info","message":"Google login successful: mahaveerprashad870@gmail.com","service":"PrernaTest-backend","timestamp":"2025-09-12 10:00:27","userId":"cmfgbpj0c0000v94kw4z8rl6t"}
+{"level":"info","message":"Google login successful: mahaveerprashad870@gmail.com","service":"PrernaTest-backend","timestamp":"2025-09-12 10:00:28","userId":"cmfgbpj0c0000v94kw4z8rl6t"}
+{"level":"info","message":"Google login successful: mahaveerprashad870@gmail.com","service":"PrernaTest-backend","timestamp":"2025-09-12 10:20:13","userId":"cmfgbpj0c0000v94kw4z8rl6t"}
+{"level":"info","message":"Google login successful: mahaveerprashad870@gmail.com","service":"PrernaTest-backend","timestamp":"2025-09-12 10:20:13","userId":"cmfgbpj0c0000v94kw4z8rl6t"}
+{"level":"info","message":"Received SIGINT, shutting down gracefully...","service":"PrernaTest-backend","timestamp":"2025-09-12 12:24:06"}
+{"level":"info","message":"Starting a postgresql pool with 9 connections.","service":"PrernaTest-backend","target":"quaint::pooled","timestamp":"2025-09-12 16:20:07"}
+{"level":"info","message":"Redis client connected","service":"PrernaTest-backend","timestamp":"2025-09-12 16:20:07"}
+{"level":"info","message":"Redis client ready","service":"PrernaTest-backend","timestamp":"2025-09-12 16:20:07"}
+{"level":"info","message":"Redis connected successfully","service":"PrernaTest-backend","timestamp":"2025-09-12 16:20:07"}
+{"level":"info","message":"🚀 PrernaTest Backend Server running on port 8000","service":"PrernaTest-backend","timestamp":"2025-09-12 16:20:07"}
+{"level":"info","message":"📚 Environment: production","service":"PrernaTest-backend","timestamp":"2025-09-12 16:20:07"}
+{"level":"info","message":"🔗 Health check: http://localhost:8000/health","service":"PrernaTest-backend","timestamp":"2025-09-12 16:20:07"}
+{"level":"info","message":"Database connected successfully","service":"PrernaTest-backend","timestamp":"2025-09-12 16:20:08"}
+{"level":"info","message":"Received SIGINT, shutting down gracefully...","service":"PrernaTest-backend","timestamp":"2025-09-12 16:20:13"}

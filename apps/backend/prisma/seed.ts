@@ -2,8 +2,8 @@ import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-async function main() {
-  console.log('ðŸŒ± Starting seed process...');
+export async function main() {
+  
 
   // Create sample test with correct field names based on your schema
   const test = await prisma.test.create({
@@ -2502,11 +2502,13 @@ async function main() {
 
 }
 
-main()
-  .catch((e) => {
-    console.error('âŒ Seed failed:', e);
-    // process.exit(1);
-  })
-  .finally(async () => {
-    await prisma.$disconnect();
-  });
+if (require.main === module) {
+  main()
+    .catch((e) => {
+      console.error(e);
+      process.exit(1);
+    })
+    .finally(async () => {
+      await prisma.$disconnect();
+    });
+}
