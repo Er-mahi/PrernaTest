@@ -20,9 +20,9 @@ const startServer = async () => {
     } catch (redisError) {
       logger.warn('Redis connection failed, continuing without Redis:', redisError);
     }
-
+    const portNumber = typeof PORT === 'string' ? parseInt(PORT, 10) : PORT;
     // Start HTTP server and bind to 0.0.0.0 for Render compatibility
-    server = app.listen(PORT || '0.0.0.0', () => {
+    server = app.listen(portNumber, '0.0.0.0', () => {
       logger.info(`🚀 Backend Server running on port ${PORT}`);
       logger.info(`📚 Environment: ${config.NODE_ENV}`);
       logger.info(`🔗 Health check: /health`);
