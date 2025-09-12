@@ -5,7 +5,7 @@ import { connectRedis } from '@/config/redis';
 import prisma from '@/config/database';
 import http from 'http';
 
-// Use Render port if provided
+// Use Render port if provided, else fallback to config or 8000
 const PORT = process.env.PORT || config.PORT || 8000;
 
 // Store server instance globally for graceful shutdown
@@ -21,8 +21,8 @@ const startServer = async () => {
       logger.warn('Redis connection failed, continuing without Redis:', redisError);
     }
 
-    // Start HTTP server
-    server = app.listen(PORT, () => {
+    // Start HTTP server and bind to 0.0.0.0 for Render compatibility
+    server = app.listen(PORT || '0.0.0.0', () => {
       logger.info(`🚀 Backend Server running on port ${PORT}`);
       logger.info(`📚 Environment: ${config.NODE_ENV}`);
       logger.info(`🔗 Health check: /health`);
@@ -56,7 +56,7 @@ const startServer = async () => {
   }
 };
 
-// Graceful shutdown
+// Graceful shutdown logic remains unchanged
 const gracefulShutdown = async (signal: string) => {
   logger.info(`Received ${signal}, shutting down gracefully...`);
 
@@ -89,7 +89,7 @@ const gracefulShutdown = async (signal: string) => {
   }, 30000);
 };
 
-// Handle signals
+// Handle termination signals
 process.on('SIGTERM', () => gracefulShutdown('SIGTERM'));
 process.on('SIGINT', () => gracefulShutdown('SIGINT'));
 
