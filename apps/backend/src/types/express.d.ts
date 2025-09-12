@@ -1,4 +1,6 @@
-import { Role } from './auth'; // Your Role type from '@/types/auth'
+// src/types/express.d.ts
+import type { Role } from '@/types/auth';
+export {}; // important: make this a module
 
 declare global {
   namespace Express {
@@ -6,7 +8,7 @@ declare global {
       user?: {
         id: string;
         email: string;
-        role: Role;  // match Prisma Role enum
+        role: Role;
         name?: string | null;
         emailVerified?: Date | null;
         image?: string | null;

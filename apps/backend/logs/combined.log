@@ -4355,3 +4355,39 @@
 {"level":"info","message":"🔗 Health check: http://localhost:8000/health","service":"PrernaTest-backend","timestamp":"2025-09-12 16:20:07"}
 {"level":"info","message":"Database connected successfully","service":"PrernaTest-backend","timestamp":"2025-09-12 16:20:08"}
 {"level":"info","message":"Received SIGINT, shutting down gracefully...","service":"PrernaTest-backend","timestamp":"2025-09-12 16:20:13"}
+{"level":"info","message":"Starting a postgresql pool with 9 connections.","service":"PrernaTest-backend","target":"quaint::pooled","timestamp":"2025-09-12 20:28:16"}
+{"level":"info","message":"Redis client connected","service":"PrernaTest-backend","timestamp":"2025-09-12 20:28:16"}
+{"level":"info","message":"Redis client ready","service":"PrernaTest-backend","timestamp":"2025-09-12 20:28:16"}
+{"level":"info","message":"Redis connected successfully","service":"PrernaTest-backend","timestamp":"2025-09-12 20:28:16"}
+{"level":"info","message":"🚀 Backend Server running on port 8000","service":"PrernaTest-backend","timestamp":"2025-09-12 20:28:16"}
+{"level":"info","message":"📚 Environment: production","service":"PrernaTest-backend","timestamp":"2025-09-12 20:28:16"}
+{"level":"info","message":"🔗 Health check: /health","service":"PrernaTest-backend","timestamp":"2025-09-12 20:28:16"}
+{"level":"info","message":"Database connected successfully","service":"PrernaTest-backend","timestamp":"2025-09-12 20:28:17"}
+{"level":"info","message":"Starting a postgresql pool with 9 connections.","service":"PrernaTest-backend","target":"quaint::pooled","timestamp":"2025-09-12 20:31:11"}
+{"level":"info","message":"Redis client connected","service":"PrernaTest-backend","timestamp":"2025-09-12 20:31:11"}
+{"level":"info","message":"Redis client ready","service":"PrernaTest-backend","timestamp":"2025-09-12 20:31:11"}
+{"level":"info","message":"Redis connected successfully","service":"PrernaTest-backend","timestamp":"2025-09-12 20:31:11"}
+{"level":"info","message":"🚀 Backend Server running on port 8000","service":"PrernaTest-backend","timestamp":"2025-09-12 20:31:11"}
+{"level":"info","message":"📚 Environment: production","service":"PrernaTest-backend","timestamp":"2025-09-12 20:31:11"}
+{"level":"info","message":"🔗 Health check: /health","service":"PrernaTest-backend","timestamp":"2025-09-12 20:31:11"}
+{"level":"info","message":"Database connected successfully","service":"PrernaTest-backend","timestamp":"2025-09-12 20:31:11"}
+{"level":"info","message":"Starting a postgresql pool with 9 connections.","service":"PrernaTest-backend","target":"quaint::pooled","timestamp":"2025-09-12 20:31:55"}
+{"level":"info","message":"Redis client connected","service":"PrernaTest-backend","timestamp":"2025-09-12 20:31:55"}
+{"level":"info","message":"Redis client ready","service":"PrernaTest-backend","timestamp":"2025-09-12 20:31:55"}
+{"level":"info","message":"Redis connected successfully","service":"PrernaTest-backend","timestamp":"2025-09-12 20:31:55"}
+{"level":"info","message":"🚀 Backend Server running on port 8000","service":"PrernaTest-backend","timestamp":"2025-09-12 20:31:55"}
+{"level":"info","message":"📚 Environment: production","service":"PrernaTest-backend","timestamp":"2025-09-12 20:31:55"}
+{"level":"info","message":"🔗 Health check: /health","service":"PrernaTest-backend","timestamp":"2025-09-12 20:31:55"}
+{"level":"info","message":"Database connected successfully","service":"PrernaTest-backend","timestamp":"2025-09-12 20:31:55"}
+{"level":"info","message":"Received SIGINT, shutting down gracefully...","service":"PrernaTest-backend","timestamp":"2025-09-12 20:31:58"}
+{"level":"info","message":"Database disconnected","service":"PrernaTest-backend","timestamp":"2025-09-12 20:31:58"}
+{"level":"info","message":"Starting a postgresql pool with 9 connections.","service":"PrernaTest-backend","target":"quaint::pooled","timestamp":"2025-09-12 20:32:12"}
+{"level":"info","message":"Redis client connected","service":"PrernaTest-backend","timestamp":"2025-09-12 20:32:12"}
+{"level":"info","message":"Redis client ready","service":"PrernaTest-backend","timestamp":"2025-09-12 20:32:12"}
+{"level":"info","message":"Redis connected successfully","service":"PrernaTest-backend","timestamp":"2025-09-12 20:32:12"}
+{"level":"info","message":"🚀 Backend Server running on port 8000","service":"PrernaTest-backend","timestamp":"2025-09-12 20:32:12"}
+{"level":"info","message":"📚 Environment: production","service":"PrernaTest-backend","timestamp":"2025-09-12 20:32:12"}
+{"level":"info","message":"🔗 Health check: /health","service":"PrernaTest-backend","timestamp":"2025-09-12 20:32:12"}
+{"level":"info","message":"Database connected successfully","service":"PrernaTest-backend","timestamp":"2025-09-12 20:32:12"}
+{"level":"info","message":"Received SIGINT, shutting down gracefully...","service":"PrernaTest-backend","timestamp":"2025-09-12 20:33:01"}
+{"level":"info","message":"Database disconnected","service":"PrernaTest-backend","timestamp":"2025-09-12 20:33:01"}

@@ -191,7 +191,7 @@ router.post('/logout', authenticateToken, catchAsync(async (req, res) => {
   // Clear auth cookie
   clearAuthCookie(res);
 
-  logger.info(`User logged out: ${req.user!.email}`, { userId: req.user!.id });
+  logger.info(`User logged out: ${req.user?.email}`, { userId: req.user?.id });
 
   res.json({
     success: true,

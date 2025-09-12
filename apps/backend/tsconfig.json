@@ -9,6 +9,7 @@
     "target": "ES2020",
 
     "baseUrl": "./src",
+    
     "paths": {
       "@/*": ["*"],
       "@/config/*": ["config/*"],
@@ -37,6 +38,9 @@
     "moduleDetection": "force",
     "skipLibCheck": true
   },
-  "include": ["src/**/*.ts", "src/types/**/*.d.ts"],
-  "exclude": ["node_modules", "dist"]
+  "include": ["src", "src/**/*", "src/types/express.d.ts", "src/types/**/*.d.ts"],
+  "exclude": ["node_modules", "dist"],
+   "ts-node": {
+    "files": true
+  }
 }
