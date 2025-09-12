@@ -1,17 +1,21 @@
-import { User } from "@prisma/client";
-import "express";
+import { Role } from './auth'; // Your Role type from '@/types/auth'
+
 declare global {
   namespace Express {
-    interface UserShape {
-      id: string;
-      email: string;
-      role: "USER" | "ADMIN" | SUPER_ADMIN;
-      name?: string | null;
-      image?: string | null;
-    }
     interface Request {
-      user?: UserShape;
+      user?: {
+        id: string;
+        email: string;
+        role: Role;  // match Prisma Role enum
+        name?: string | null;
+        emailVerified?: Date | null;
+        image?: string | null;
+        phone?: string | null;
+        isActive?: boolean;
+        lastLoginAt?: Date | null;
+        createdAt?: Date;
+        updatedAt?: Date;
+      };
     }
   }
 }
-export {};

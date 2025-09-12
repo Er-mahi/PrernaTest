@@ -2,6 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 import { AppError } from './errorHandler';
 import prisma from '@/config/database';
+import { Role } from '@/types/auth';
 
 export function authenticateToken(req: Request, res: Response, next: NextFunction) {
   // Try multiple token sources: cookies, headers, etc.
@@ -29,7 +30,7 @@ export function authenticateToken(req: Request, res: Response, next: NextFunctio
 
   try {
     const decoded = jwt.verify(token, secret) as { id: string; email: string; role: string };
-    req.user = { id: decoded.id, email: decoded.email, role: decoded.role };
+    req.user = { id: decoded.id, email: decoded.email, role: decoded.role as Role};
     next();
   } catch (error) {
     console.log("🔍 Token verification failed:", error);
