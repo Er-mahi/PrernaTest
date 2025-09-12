@@ -39,10 +39,10 @@
     "seed": "ts-node prisma/seed.ts"
   },
   "devDependencies": {
-    "@types/bcrypt": "^5.0.2",
     "@types/compression": "^1.8.1",
     "@types/cookie-parser": "^1.4.9",
     "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
     "@types/express-rate-limit": "^5.1.3",
     "@types/jsonwebtoken": "^9.0.10",
     "@types/morgan": "^1.9.10",
@@ -50,7 +50,6 @@
     "@types/nodemailer": "^6.4.14",
     "@types/passport": "^1.0.17",
     "@types/passport-google-oauth20": "^2.0.16",
-    "@types/winston": "^2.4.4",
     "nodemon": "^3.0.1",
     "prisma": "^6.15.0",
     "ts-node": "^10.9.2",
