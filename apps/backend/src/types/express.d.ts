@@ -5,12 +5,12 @@ declare global {
     interface UserShape {
       id: string;
       email: string;
-      role: "USER" | "ADMIN" ;
+      role: "USER" | "ADMIN" | SUPER_ADMIN;
       name?: string | null;
       image?: string | null;
     }
     interface Request {
-      user?: User;
+      user?: UserShape;
     }
   }
 }
