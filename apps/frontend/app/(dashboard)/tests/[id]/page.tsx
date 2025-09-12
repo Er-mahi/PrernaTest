@@ -171,7 +171,7 @@ function InstructionScreen({ testTitle, onStart }: { testTitle: string; onStart:
               <div>
                 <h4 className="font-bold text-red-800 mb-1">अंतिम चेतावनी</h4>
                 <p className="text-red-700 text-sm">
-                  एक बार परीक्षा शुरू होने के बाद, आप इसे रोक नहीं सकते। समय समाप्त होने पर परीक्षा अपने आप सबमिट हो जाएगी। 
+                  एक बार परीक्षा शुरू होने के बाद, आप इसे रोक नहीं सकते। परीक्षा पूरी करने के लिए अंत में "Submit" बटन पर क्लिक करना न भूलें। 
                   सुनिश्चित करें कि आप पूरी तरह से तैयार हैं।
                 </p>
               </div>
@@ -196,8 +196,8 @@ function InstructionScreen({ testTitle, onStart }: { testTitle: string; onStart:
   );
 }
 
-export default function TakeTest({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = React.use(params);
+export default function TakeTest({ params }: { params: { id: string } }) {
+  const { id } = params;
   
   // Use regular state for instructions (not persisted to avoid conflicts)
   const [showInstructions, setShowInstructions] = useState(true);
@@ -240,17 +240,28 @@ export default function TakeTest({ params }: { params: Promise<{ id: string }> }
 
   // Flatten questions
   const questions = useMemo(() => {
-    if (!data?.test?.sections) return [];
-    return data.test.sections.flatMap((s) =>
-      s.questions.map((q, idx) => ({
-        id: q.question.id,
-        content: q.question.content,
-        options: q.question.options,
-        marks: q.marks,
-        index: idx,
-      }))
+  if (!data?.test?.sections) return [];
+
+  const sortedSections = [...data.test.sections].sort(
+    (a, b) => (a.order ?? 999) - (b.order ?? 999)
+  );
+
+  return sortedSections.flatMap((section) => {
+    const sortedQuestions = [...section.questions].sort(
+      (a, b) => (a.order ?? 999) - (b.order ?? 999)
     );
-  }, [data]);
+
+    return sortedQuestions.map((q) => ({
+      id: q.question.id,
+      content: q.question.content,
+      options: q.question.options,
+      marks: q.marks,
+      section: section.title, 
+    }));
+  });
+}, [data]);
+
+
 
   // Clear persisted data on component unmount or test completion
   const clearPersistedData = useCallback(() => {

@@ -37,6 +37,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@next/eslint-plugin-next": "^15.5.3",
     "@tailwindcss/postcss": "^4.1.12",
     "@types/bcrypt": "^6.0.0",
     "@types/node": "^20",
@@ -45,7 +46,7 @@
     "@types/recharts": "^1.8.29",
     "autoprefixer": "^10.4.21",
     "eslint": "^9",
-    "eslint-config-next": "15.5.0",
+    "eslint-config-next": "^15.5.0",
     "postcss": "^8.4.31",
     "tailwindcss": "^4.1.12",
     "typescript": "^5"

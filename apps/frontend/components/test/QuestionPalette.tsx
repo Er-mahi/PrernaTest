@@ -45,7 +45,7 @@ export function QuestionPalette({
       <h3 className="font-semibold text-gray-900 mb-4">Question Palette</h3>
 
       {/* Status Legend */}
-      <div className="mb-6 space-y-2 text-sm">
+      <div className="mb-6 space-y-2 text-sm text-gray-400">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <div className="w-4 h-4 bg-green-500 rounded"></div>

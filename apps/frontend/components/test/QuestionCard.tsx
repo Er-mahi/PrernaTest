@@ -92,7 +92,7 @@ export function QuestionCard({
       </div>
 
       {/* Navigation Controls */}
-      <div className="flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0 pt-6 border-t border-gray-200">
+      <div className="flex flex-row items-center justify-between pt-6 border-t border-gray-200 space-x-2">
         {/* Left side - Previous button */}
         <Button
           onClick={onPrevious}
@@ -126,6 +126,7 @@ export function QuestionCard({
           <ChevronRight className="h-4 w-4" />
         </Button>
       </div>
+
     </div>
   );
 }

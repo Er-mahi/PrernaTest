@@ -52,7 +52,7 @@ export function TestSubmitModal({
               Are you sure you want to submit your test? You won't be able to make changes after submission.
             </p>
             
-            <div className="bg-gray-50 rounded-lg p-4 space-y-2">
+            <div className="bg-gray-50 rounded-lg p-4 space-y-2 text-gray-400">
               <div className="flex justify-between text-sm">
                 <span>Total Questions:</span>
                 <span className="font-medium">{stats.total}</span>
