@@ -1,34 +1,79 @@
-
 import app from './app';
 import { config, isDevelopment } from '@/config/env';
 import { logger } from '@/utils/logger';
 import { connectRedis } from '@/config/redis';
 import prisma from '@/config/database';
+import http from 'http';
 
-const PORT = config.PORT || 8000;
+// Use Render port if provided
+const PORT = process.env.PORT || config.PORT || 8000;
 
+// Store server instance globally for graceful shutdown
+let server: http.Server;
 
-// Graceful shutdown handler
+const startServer = async () => {
+  try {
+    // Initialize Redis (optional)
+    try {
+      await connectRedis();
+      logger.info('Redis connected successfully');
+    } catch (redisError) {
+      logger.warn('Redis connection failed, continuing without Redis:', redisError);
+    }
+
+    // Start HTTP server
+    server = app.listen(PORT, () => {
+      logger.info(`🚀 Backend Server running on port ${PORT}`);
+      logger.info(`📚 Environment: ${config.NODE_ENV}`);
+      logger.info(`🔗 Health check: /health`);
+
+      if (isDevelopment) {
+        logger.info(`📋 Prisma Studio: npx prisma studio`);
+        logger.info(`🌐 Frontend URL: ${config.FRONTEND_URL}`);
+      }
+    });
+
+    // Handle server errors
+    server.on('error', (error: any) => {
+      if (error.syscall !== 'listen') throw error;
+
+      const bind = typeof PORT === 'string' ? 'Pipe ' + PORT : 'Port ' + PORT;
+
+      switch (error.code) {
+        case 'EACCES':
+          logger.error(bind + ' requires elevated privileges');
+          process.exit(1);
+        case 'EADDRINUSE':
+          logger.error(bind + ' is already in use');
+          process.exit(1);
+        default:
+          throw error;
+      }
+    });
+  } catch (error) {
+    logger.error('Failed to start server:', error);
+    process.exit(1);
+  }
+};
+
+// Graceful shutdown
 const gracefulShutdown = async (signal: string) => {
   logger.info(`Received ${signal}, shutting down gracefully...`);
-  
-  const server = app.listen(PORT);
-  
-  // Stop accepting new connections
+
+  if (!server) {
+    logger.warn('Server not running, exiting...');
+    process.exit(0);
+  }
+
   server.close(async (err) => {
     if (err) {
       logger.error('Error during server shutdown:', err);
       process.exit(1);
     }
-    
+
     try {
-      // Close database connections
       await prisma.$disconnect();
       logger.info('Database disconnected');
-      
-      // Close Redis connection
-      // Redis disconnect is handled in redis config
-      
       logger.info('Graceful shutdown completed');
       process.exit(0);
     } catch (error) {
@@ -36,15 +81,15 @@ const gracefulShutdown = async (signal: string) => {
       process.exit(1);
     }
   });
-  
-  // Force shutdown after 30 seconds
+
+  // Force shutdown after 30s
   setTimeout(() => {
     logger.error('Forced shutdown due to timeout');
     process.exit(1);
   }, 30000);
 };
 
-// Handle graceful shutdown signals
+// Handle signals
 process.on('SIGTERM', () => gracefulShutdown('SIGTERM'));
 process.on('SIGINT', () => gracefulShutdown('SIGINT'));
 
@@ -61,59 +106,4 @@ process.on('uncaughtException', (error) => {
 });
 
 // Start server
-const startServer = async () => {
-  try {
-    // Initialize Redis connection (optional)
-    try {
-      await connectRedis();
-      logger.info('Redis connected successfully');
-    } catch (redisError) {
-      logger.warn('Redis connection failed, continuing without Redis:', redisError);
-    }
-    
-    // Start HTTP server
-    const server = app.listen(PORT, () => {
-      logger.info(`🚀 PrernaTest Backend Server running on port ${PORT}`);
-      logger.info(`📚 Environment: ${config.NODE_ENV}`);
-      logger.info(`🔗 Health check: http://localhost:${PORT}/health`);
-      
-      if (isDevelopment) {
-        logger.info(`📋 Prisma Studio: npx prisma studio`);
-        logger.info(`🌐 Frontend URL: ${config.FRONTEND_URL}`);
-      }
-    });
-
-    // Handle server errors
-    server.on('error', (error: any) => {
-      if (error.syscall !== 'listen') {
-        throw error;
-      }
-
-      const bind = typeof PORT === 'string' ? 'Pipe ' + PORT : 'Port ' + PORT;
-
-      switch (error.code) {
-        case 'EACCES':
-          logger.error(bind + ' requires elevated privileges');
-          process.exit(1);
-          break;
-        case 'EADDRINUSE':
-          logger.error(bind + ' is already in use');
-          process.exit(1);
-          break;
-        default:
-          throw error;
-      }
-    });
-
-    return server;
-  } catch (error) {
-    logger.error('Failed to start server:', error);
-    process.exit(1);
-  }
-};
-
-// Start the server
-startServer().catch((error) => {
-  logger.error('Server startup error:', error);
-  process.exit(1);
-});
+startServer();
