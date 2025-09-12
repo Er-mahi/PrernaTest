@@ -21,7 +21,7 @@
       "@/types/*": ["types/*"]
     },
 
-    "types": ["node"], 
+    "types": ["node", "express"], 
     "typeRoots": ["./src/types", "./node_modules/@types"],
 
     "sourceMap": true,
